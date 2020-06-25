@@ -8,7 +8,7 @@ import EditPostFormContainer from "./posts/edit_post_form_container";
 // NB: this file is complete - you do not to write/edit anything!
 const App = () => (
   <div>
-    <h1>React 1</h1>
+    <h1>Tolentest</h1>
     <Switch>
       <Route exact path="/" component={PostIndexContainer} />
       <Route exact path="/posts/:postId" component={PostShowContainer} />
