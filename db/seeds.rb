@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Post.create!(:title => "Post 1", :body => "Body 1")
+Post.create!(:title => "Post 2", :body => "Body 2")
+Post.create!(:title => "Post 3", :body => "Body 3")
+Post.create!(:title => "Post 4", :body => "Body 4")
