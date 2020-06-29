@@ -1,13 +1,12 @@
-import { combineReducers } from 'redux';
-import PostsReducer from './posts_reducer';
+import {combineReducers} from 'redux';
+import entitiesReducer from './entities_reducer';
+import sessionReducer from './session_reducer';
+import errorsReducer from './errors_reducer';
 
-/*
-Export a `RootReducer` that sets up a `posts` slice of state, which delegates
-to the `PostsReducer`.
-*/
+const rootReducer = combineReducers({
+    entities: entitiesReducer,
+    session: sessionReducer,
+    errors: errorsReducer,
+})
 
-const RootReducer = combineReducers({
-  posts: PostsReducer
-});
-
-export default RootReducer;
+export default rootReducer;

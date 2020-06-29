@@ -1,0 +1,2 @@
+class Cann < ApplicationRecord
+end

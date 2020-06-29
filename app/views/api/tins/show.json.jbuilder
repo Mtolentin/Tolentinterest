@@ -1,0 +1,1 @@
+json.partial! '/api/tins/tin', tin: tpin
