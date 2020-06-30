@@ -1,0 +1,131 @@
+.login-signup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 484px;
+    height: 370px;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.login-signup div #logo {
+    font-size: 45px;
+    margin-top: 10px;
+}
+
+h2{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 27px;
+}
+
+.buttons{
+    padding: 15px;
+    width: 85%;
+}
+
+.button{
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+    margin-top: 10px;
+    width: 100%;
+    font-family: inherit;
+    border-radius: 30px;
+    border: inherit;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.button:focus{
+    outline: none;
+}
+
+.login-button{
+    background-color: #1DB954;
+    color: white;
+}
+
+.demo-login-button{
+    background-color: rgb(8, 71, 24);
+    color: white;
+}
+
+.demo-login-button:hover{
+    background-color: rgb(24, 121, 40);
+}
+
+.buttons .signup-button{
+    background-color: rgb(230, 230, 230);
+    color: black;
+}
+
+.login-button:hover{
+    background-color: rgb(20, 150, 53);
+}
+
+.buttons .signup-button:hover{
+    background-color: rgb(212, 212, 212);
+}
+
+.welcome-demo{
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+    color: black;
+    padding: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    width: 484px;
+    border-radius: unset;
+    border-top: 1px solid rgb(235, 235, 235);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: white;
+    font-weight: bold;
+}
+
+.welcome-demo:hover{
+    background-color: rgb(238, 238, 238);
+}
+
+.splash-back{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.splash-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tile-box{
+    margin: 8px;
+    width: 236px;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.tile-img{
+    border-radius: 20px;
+    height: auto;
+    width: 100%;
+    transition: 300ms;
+}

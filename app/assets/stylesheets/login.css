@@ -1,0 +1,139 @@
+.login-form-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 484px;
+    height: 566px;
+    font-size: 20px;
+    padding-top: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    color: rgb(48, 48, 48);
+}
+
+.login-heading div #logo{
+    font-size: 45px;
+}
+
+.login-heading h1{
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.login-heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.login-fields{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-fields > input{
+    border: 2px solid lightgray;
+    border-radius: 15px;
+    width: 250px;
+    height: 45px;
+    padding: 10px;
+    margin-top: 7px;
+    box-sizing: border-box;
+}
+
+.login-fields > input:focus{
+    outline-style: none;
+    border: 3px solid rgb(0, 223, 0);
+}
+
+.login-form{
+    height:70%;
+}
+
+.login-form-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 30%;
+}
+
+.login-form-buttons button{
+    width: 250px;
+    height: 35px;
+    padding: 5px;
+}
+
+.login-form-buttons div{
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.login-form-buttons .demo{
+    background-color: rgb(0, 77, 34);
+}
+
+.login-form-buttons .demo:hover{
+    background-color: rgb(94, 218, 135) ;
+}
+
+.side-button a{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: white;
+    width: 100px;
+    height: auto;
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
+    z-index: 20;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+}
+
+.error-list{
+    width: auto;
+    height: 50px;
+    list-style: none;
+    padding: 0px;
+    text-align: center;
+}
+
+.error-list li{
+    color: red;
+}
+
+.error{
+    color: red;
+    text-align: center;
+    width: auto;
+    height: 20px;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.signup-link{
+    padding: 25px;
+}
+
+.signup-link > a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+}
