@@ -1,2 +1,2 @@
-json.extract! pin, :id, :author_id, :title, :about
-json.photoUrl url_for(pin.photo)
+json.extract! tin, :id, :author_id, :title, :about
+json.photoUrl url_for(tin.photo)

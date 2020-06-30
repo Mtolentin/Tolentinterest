@@ -44,19 +44,19 @@ class UserProfile extends React.Component{
     }
 
 
-    toggleBoardForm(){
-        let status = this.state.boardForm;
-        this.setState({boardForm: !status});
+    toggleShelform(){
+        let status = this.state.shelfForm;
+        this.setState({shelfForm: !status});
     }
 
 
-    showBoardForm(){
-        if (this.state.boardForm){
-            const {createBoard, clearErrors, user} = this.props;
-            return (<CreateBoardForm 
-                        createBoard={createBoard}
+    showShelfForm(){
+        if (this.state.shelfForm){
+            const {createShelf, clearErrors, user} = this.props;
+            return (<CreateShelfForm 
+                        createShelf={createShelf}
                         clearErrors={clearErrors}
-                        closeBoardForm={this.toggleBoardForm}
+                        closeShelfForm={this.toggleShelfForm}
                         currentUserId={user.id}
                     />
             )
@@ -77,7 +77,7 @@ class UserProfile extends React.Component{
 
                     <ul id="create-options" className="drop-down-menu menu-box">
                         <a onClick={this.toggleShelfForm}><li>Create Shelf</li></a>
-                        <Link to="/pin-builder"><li>Create Tin</li></Link>
+                        <Link to="/tin-builder"><li>Create Tin</li></Link>
                     </ul>
 
 
@@ -131,7 +131,7 @@ class UserProfile extends React.Component{
 
                     <div className="user-selection">
                         <NavLink className="button" to={`/users/${user.id}/shelves`}>Shelves</NavLink>
-                        <NavLink className="button" to={`/users/${user.id}/pins`}>Tins</NavLink>
+                        <NavLink className="button" to={`/users/${user.id}/tins`}>Tins</NavLink>
                     </div>
 
 

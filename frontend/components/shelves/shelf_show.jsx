@@ -19,12 +19,12 @@ class ShelfShow extends React.Component{
         return (
             <div className="shelf-show-box">
                 <div className="shelf-info">
-                    <h1>{board.name}</h1>
-                    <p>{board.about}</p>
+                    <h1>{shelf.name}</h1>
+                    <p>{shelf.about}</p>
                 </div>
 
-                <div className="shelf-show-pins">
-                    { !pins[0] ? "" : <TinIndex getInfo={fetchShelf} tins={tins} /> }
+                <div className="shelf-show-tins">
+                    { !tins[0] ? "" : <TinIndex getInfo={fetchShelf} tins={tins} /> }
                 </div>
             </div>
         )

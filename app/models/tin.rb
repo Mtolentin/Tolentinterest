@@ -19,7 +19,7 @@ class Tin < ApplicationRecord
 
     def ensure_photo
         unless self.photo.attached?
-            errors[:pin] << "no file loaded"
+            errors[:tin] << "no file loaded"
         end
     end
 

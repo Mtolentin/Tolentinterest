@@ -1,1 +1,1 @@
-json.partial! '/api/tins/tin', tin: tpin
+json.partial! '/api/tins/tin', tin: tin

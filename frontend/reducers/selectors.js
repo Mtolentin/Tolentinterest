@@ -13,7 +13,7 @@ export const selectUserTins = (tins, userId) => {
 
 
 
-export const selectOtherTins = (tins, userId) => {
+export const selectOtherUsersTins = (tins, userId) => {
     let selectedTins = [];
     
     Object.values(tins).forEach(tin => {
@@ -25,13 +25,13 @@ export const selectOtherTins = (tins, userId) => {
 
 
 
-export const selectSuggestedPins = (tins, _author_Id, tinId) => {
+export const selectSuggestedTins = (tins, _author_Id, tinId) => {
 
     let suggestedTins = [];
     
     Object.values(tins).forEach( tin => {
         if (tin.id === tinId) return;
-        if (tin.id / 10 === pins[pinId] / 10) suggestedTins.push(tin);
+        if (tin.id / 10 === tins[tinId] / 10) suggestedTins.push(tin);
     })
     
     return suggestedTins;

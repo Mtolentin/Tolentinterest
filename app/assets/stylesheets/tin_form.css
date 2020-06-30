@@ -1,11 +1,11 @@
-.pin-modal{
+.tin-modal{
     margin-top: 40px;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
 }
 
-.pin-form-box{
+.tin-form-box{
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -17,7 +17,7 @@
     box-shadow: 1px 1px 10px #e0e0e0;
 }
 
-.pin-top-buttons{
+.tin-top-buttons{
     height: 40px;
     display: flex;
     flex-direction: row-reverse;
@@ -26,11 +26,11 @@
     position: relative;
 }
 
-.pin-top-buttons > div{
+.tin-top-buttons > div{
     height: 100%;
 }
 
-.pin-top-buttons > button{
+.tin-top-buttons > button{
     width: 100px;
     font-size: 18px;
     padding-right: 15px;
@@ -43,7 +43,7 @@
     background-color: lightgrey;
 }
 
-.pin-top-buttons > button .select-board{
+.tin-top-buttons > button .select-shelf{
     width: 150px;
     color: rgb(0, 87, 6);
     padding: 15px;
@@ -206,7 +206,7 @@
     font-family: "Noto Sans";
 }
 
-.edit-tin-board .content{
+.edit-tin-shelf .content{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -323,7 +323,7 @@
     margin: 7px;
 }
 
-.edit-tin-board .image{
+.edit-tin-shelf .image{
     width: 33%;
     height: 400px;
     max-height: 400px;
@@ -432,7 +432,7 @@
     position: absolute;
 }
 
-.pin-top-buttons >.no-button,
+.tin-top-buttons >.no-button,
 .save-or-cancel > .no-button{
     background-color: rgb(147, 231, 147);
 }
@@ -443,12 +443,12 @@
     cursor: initial;
 }
 
-.pin-confirmation-box{
+.tin-confirmation-box{
     width: auto;
     padding: 50px;
 }
 
-.pin-confirmation-box h1{
+.tin-confirmation-box h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

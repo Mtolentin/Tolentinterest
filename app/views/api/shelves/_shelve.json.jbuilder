@@ -1,1 +1,1 @@
-json.extract! board, :id, :author_id, :name, :description
+json.extract! shelve, :id, :author_id, :name, :description

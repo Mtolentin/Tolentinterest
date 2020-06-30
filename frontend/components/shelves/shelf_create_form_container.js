@@ -8,7 +8,7 @@ const mapStateToProps = ({errors}) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    createBoard: shelf => dispatch(createShelf(shelf)),
+    createShelf: shelf => dispatch(createShelf(shelf)),
     clearErrors: () => dispatch(clearErrors())
 })
 

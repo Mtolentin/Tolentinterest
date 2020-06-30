@@ -7,12 +7,12 @@ export const RECEIVE_TIN_ERRORS = "RECEIVE_TIN_ERRORS";
 
 export const receiveTins = tins => ({
     type: RECEIVE_TINS,
-    pins
+    tins
 })
 
 export const receiveTin = tin => ({
     type: RECEIVE_TIN,
-    pin
+    tin
 })
 
 export const removeTin = tinId => ({
@@ -31,19 +31,19 @@ export const fetchTins = () => dispatch => {
         error => dispatch(receiveTinErrors(error.responseJSON)))
 }
 
-export const fetchTin = pinId => dispatch => {
+export const fetchTin = tinId => dispatch => {
     return TAU.fT(tinId)
         .then( tin => dispatch(receiveTin(tin)),
         error => dispatch(receiveTinErrors(error.responseJSON)))
 }
 
 export const createTin = tin => dispatch => {
-    return TAU.cT(pin)
-        .then( tin => dispatch(receiveTin(Tin)),
+    return TAU.cT(tin)
+        .then( tin => dispatch(receiveTin(tin)),
         error => dispatch(receiveTinErrors(error.responseJSON)))
 }
 
-export const updatePin = pin => dispatch => {
+export const updateTin = tin => dispatch => {
     return TAU.uT(tin)
         .then( tin => dispatch(receiveTin(tin)),
         error => dispatch(receiveTinErrors(error.responseJSON)))
@@ -56,7 +56,7 @@ export const deleteTin = tinId => dispatch => {
 }
 
 export const saveToShelf = (tin_shelf) => dispatch => {
-    return TAU.st(tin_shelf)
+    return TAU.sT(tin_shelf)
         .then( tinId => dispatch(fetchTin(tinId)),
         error => dispatch(receiveTinErrors(error.responseJSON)))
 }

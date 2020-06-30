@@ -21,7 +21,7 @@ class Api::TinsController < ApplicationController
         if @tin.save
             render "/api/tins/show"
         else
-            render json: @pin.errors.full_messages, status: 422
+            render json: @tin.errors.full_messages, status: 422
         end
     end
 
@@ -31,10 +31,10 @@ class Api::TinsController < ApplicationController
             if @tin.update(tin_params)
                 render "/api/tins/show"
             else
-                render json: @pin.errors.full_messages, status: 422
+                render json: @tin.errors.full_messages, status: 422
             end
         else
-            render json: @pin.errors.full_messages, status: 422
+            render json: @tin.errors.full_messages, status: 422
         end
     end
 

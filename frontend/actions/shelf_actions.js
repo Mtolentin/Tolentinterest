@@ -33,24 +33,24 @@ export const receiveTinShelves = tinshelves => ({
 
 export const fetchShelves = (userId) => dispatch => {
     return SAU.fSs(userId)
-        .then(boards => dispatch(receiveBoards(boards)),
-            error => dispatch(receiveBoardErrors(error.responseJSON)))
+        .then(shelves => dispatch(receiveShelves(shelves)),
+            error => dispatch(receiveShelfErrors(error.responseJSON)))
 }
 
-export const fetchShelves = (userId, shelfId) => dispatch => {
-    return SAU.fs(userId, shelfId)
-        .then(shelf => dispatch(receiveBoard(shelf)),
-            error => dispatch(receiveBoardErrors(error.responseJSON)))
+export const fetchShelf = (userId, shelfId) => dispatch => {
+    return SAU.fS(userId, shelfId)
+        .then(shelf => dispatch(receiveShelf(shelf)),
+            error => dispatch(receiveShelfErrors(error.responseJSON)))
 }
 
 export const createShelf = shelf => dispatch => {
-    return SAU.cs(shelf)
+    return SAU.cS(shelf)
         .then(shelf => dispatch(receiveShelf(shelf)),
             error => dispatch(receiveShelfErrors(error.responseJSON)))
 }
 
 export const updateShelf = shelf => dispatch => {
-    return SAU.uS(board)
+    return SAU.uS(shelf)
         .then(shelf => dispatch(receiveShelf(shelf)),
             error => dispatch(receiveShelfErrors(error.responseJSON)))
 }
@@ -62,7 +62,7 @@ export const deleteShelf = (userId, shelfId) => dispatch => {
 }
 
 export const fetchTinShelves = () => dispatch => {
-    return SAU.fTs()
+    return SAU.fTS()
         .then(tinshelves => dispatch(receiveTinShelves(tinshelves)),
             error => dispatch(receiveShelfErrors(error.responseJSON)))
 }

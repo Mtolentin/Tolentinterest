@@ -6,7 +6,7 @@ import { selectShelfTins } from '../../reducers/selectors';
 
 const mapStateToProps = ({entities: {shelves, tinShelves, tins}, errors}, {match: {params}}) => ({
     shelf: shelves[params.shelfId],
-    pins: selectShelfTins(tinShelves, tins, parseInt(params.shelfId)),
+    tins: selectShelfTins(tinShelves, tins, parseInt(params.shelfId)),
     errors
 })
 

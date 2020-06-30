@@ -1,16 +1,16 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom';
-import CreateBoardForm from '../boards/board_create_form';
+import CreateShelfForm from '../shelves/shelf_create_form';
 
 class EditTinForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.pin;
+        this.state = this.props.tin;
         const { title, description, link } = this.props.tin
         this.state = {
             title,
             about,
-            chosenBoardId: '',
+            chosenShelfId: '',
             confirm: false,
             shelfForm: false
         }
@@ -18,7 +18,7 @@ class EditTinForm extends React.Component {
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
-        this.makeBoardSelection = this.makeBoardSelection.bind(this);
+        this.makeShelfSelection = this.makeShelfSelection.bind(this);
         this.toggleMenu = this.toggleMenu.bind(this);
         this.toggleShelfForm = this.toggleShelfForm.bind(this);
     }
@@ -50,7 +50,7 @@ class EditTinForm extends React.Component {
         const { tin, currentUserId } = this.props;
         
         
-        if (pin.userId === currentUserId) {
+        if (tin.author_id === currentUserId) {
             let newUser = {
                 id: tin.id,
                 user_id: currentUserId,
@@ -58,7 +58,7 @@ class EditTinForm extends React.Component {
                 about
             };
             this.props.updateTin(newUser)
-                .then(pin => {
+                .then(tin => {
                     if (chosenShelfId) {
                         return this.props.saveToShelf({ shelf_id: parseInt(chosenShelfId), tin_id: tin.tin.id })
                     }
@@ -117,7 +117,7 @@ class EditTinForm extends React.Component {
                 <div className="drop-down select-shelf edit"
                     id="selected-text"
                     onClick={this.toggleMenu}>
-                    Select board
+                    Select a Shelf
                 </div>
 
                 
@@ -127,7 +127,7 @@ class EditTinForm extends React.Component {
                         return (
                             <li key={idx}
                                 value={shelf.id}
-                                className="board-name"
+                                className="shelf-name"
                                 onClick={this.makeShelfSelection}
                             >{shelf.name}</li>
                         )
@@ -161,7 +161,7 @@ class EditTinForm extends React.Component {
         const saveBtn = document.getElementById("save-tin");
         
         if (!saveBtn) return;
-        if (chosenBoardId === '') {
+        if (chosenShelfId === '') {
             saveBtn.disabled = true;
             saveBtn.classList.add("no-button");
         } else {
@@ -189,7 +189,7 @@ class EditTinForm extends React.Component {
 
                     <div className="tin-edit-form-box">
 
-                        <div className="edit-tin-board">
+                        <div className="edit-tin-shelf">
                             <div className="content">
                                 <div className="shelf-selection">
                                     <div>

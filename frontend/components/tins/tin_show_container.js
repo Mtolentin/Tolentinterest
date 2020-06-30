@@ -22,8 +22,8 @@ const mDTP = dispatch => ({
     fetchTins: () => dispatch(fetchTins()),
     fetchShelves: (userId) => dispatch(fetchShelves(userId)),
     clearErrors: () => dispatch(clearErrors()),
-    updatePin: tin => dispatch(updateTin(tin)),
-    deletePin: tinId => dispatch(deleteTin(tinId)),
+    updateTin: tin => dispatch(updateTin(tin)),
+    deleteTin: tinId => dispatch(deleteTin(tinId)),
     saveToShelf: (shelfTin) => dispatch(saveToShelf(shelfTin)),
     createShelf: shelf => dispatch(createShelf(shelf))
 })

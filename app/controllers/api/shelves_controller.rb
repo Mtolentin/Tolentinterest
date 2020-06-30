@@ -16,11 +16,11 @@ class Api::ShelvesController < ApplicationController
 
     def create
         @shelf = Shelve.create(shelf_params)
-        @board.user_id = current_user.id
-        if @board.save
+        @shelf.user_id = current_user.id
+        if @shelf.save
             render "/api/shelves/show"
         else
-            render json: @board.errors.full_messages, status: 422
+            render json: @shelf.errors.full_messages, status: 422
         end
     end
 

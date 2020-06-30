@@ -1,4 +1,4 @@
-import {RECEIVE_TIN_SHELVES} from '../actions/board_actions'
+import {RECEIVE_TIN_SHELVES} from '../actions/shelf_actions'
 
 const TinShelvesReducer = (state = {}, action) => {
     Object.freeze(state);

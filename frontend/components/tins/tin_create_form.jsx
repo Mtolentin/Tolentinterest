@@ -17,11 +17,11 @@ class CreateTinForm extends React.Component{
             shelfForm: false
         }
         this.update = this.update.bind(this);
-        this.shelfNames = this.boardNames.bind(this);
-        this.makeShelfSelection = this.makeBoardSelection.bind(this);
+        this.shelfNames = this.shelfNames.bind(this);
+        this.makeShelfSelection = this.makeShelfSelection.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
-        this.toggleShelfForm = this.toggleBoardForm.bind(this);
+        this.toggleShelfForm = this.toggleShelfForm.bind(this);
         this.toggleMenu = this.toggleMenu.bind(this);
     }
 
@@ -45,13 +45,13 @@ class CreateTinForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.disableFormButton();
-        const {user_id, title, description, link, chosenShelfId, photoFile} = this.state;
+        const {author_id, title, about, chosenShelfId, photoFile} = this.state;
         const formData = new FormData();
         formData.append('tin[title]', title);
         formData.append('tin[about]', about);
         formData.append('tin[author_id]', author_id);
         if (photoFile){
-            formData.append('pin[photo]', photoFile)
+            formData.append('tin[photo]', photoFile)
         }
         this.props.createTin(formData)
             .then( tin => this.props.saveToShelf({shelf_id: parseInt(chosenShelfId), tin_id: tin.tin.id}))
@@ -59,7 +59,7 @@ class CreateTinForm extends React.Component{
     }
 
     toggleButtonLock() {
-        const {chosenBoardId} = this.state;
+        const {chosenShelfId} = this.state;
         const saveBtn = document.getElementById("save-tin");
         if (!saveBtn) return;
         if (chosenShelfId === '') { //lock button
@@ -77,8 +77,8 @@ class CreateTinForm extends React.Component{
     }
     
     enableFormButton(){
-        document.getElementById("save-pin").disabled = false;
-        document.getElementById("save-pin").classList.toggle("no-button");
+        document.getElementById("save-tin").disabled = false;
+        document.getElementById("save-tin").classList.toggle("no-button");
     }
 
     showImage() {
@@ -112,7 +112,7 @@ class CreateTinForm extends React.Component{
                         <div className="tin-confirmation-box">
                             <div className="confirm-image"><i className="far fa-check-circle"></i></div>
                             <h1>Success!</h1>
-                            <p><NavLink className="continue" to={`/users/${this.state.user_id}/pins`}>Continue</NavLink></p>
+                            <p><NavLink className="continue" to={`/users/${this.state.user_id}/tins`}>Continue</NavLink></p>
                         </div>
                     </div>
                 </div>
@@ -152,7 +152,7 @@ class CreateTinForm extends React.Component{
 
                         <a onClick={this.toggleShelfForm}>
                             <li key="a"
-                                className="create-board-option">
+                                className="create-shelf-option">
                                 <i className="fas fa-plus-circle"></i>
                                 Create Shelf
                             </li>
@@ -162,7 +162,7 @@ class CreateTinForm extends React.Component{
 
                 </div>
 
-                <div className="drop-down-arrow-select-board">
+                <div className="drop-down-arrow-select-shelf">
                     <i className="fas fa-chevron-down"></i>                
                 </div>
 
@@ -181,7 +181,7 @@ class CreateTinForm extends React.Component{
     toggleMenu(e) {
         e.stopPropagation();
         let menuBox = document.getElementById("selected-text");
-        let list = document.getElementById("board-names");
+        let list = document.getElementById("shelf-names");
         if (!menuBox) return null;
         if (e.target === menuBox && !list.classList.contains("show-menu")) {
             list.classList.add("show-menu");
@@ -198,7 +198,7 @@ class CreateTinForm extends React.Component{
     showShelfForm() {
         if (this.state.shelfForm) {
             const { createShelf, clearErrors, currentUserId } = this.props;
-            return (<CreateBoardForm
+            return (<CreateShelfForm
                         createShelf={createShelf}
                         clearErrors={clearErrors}
                         closeShelfForm={this.toggleShelfForm}
@@ -228,14 +228,14 @@ class CreateTinForm extends React.Component{
 
         return (
             <div className="tin-modal">
-                {this.showBoardForm()}
+                {this.showShelfForm()}
 
                 <div className="tin-form-box">
                     {this.displayConfirmation()}
 
                     <div className="tin-top-buttons">
                         <button id="save-tin" className="save-tin" onClick={this.handleSubmit}>Save</button>
-                        {this.boardNames()}
+                        {this.shelfNames()}
                     </div>
 
                     <div className="tin-main-content">

@@ -18,7 +18,7 @@ const NavBar = ({ currentUserId, logout }) => {
                     <Link to="/home">Home</Link>
                 </div>
 
-                <NavLink to={`/users/${currentUserId}/pins`} className="icon profile">
+                <NavLink to={`/users/${currentUserId}/tins`} className="icon profile">
                     <i className="fas fa-user"></i>
                 </NavLink>
 

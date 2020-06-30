@@ -24,7 +24,7 @@ export const uS = (shelf) => {
     return $.ajax({
         url: `/api/users/${shelf.author_id}/shelves/${shelf.id}`,
         method: "PATCH",
-        data: {board}
+        data: {shelf}
     })
 }
 

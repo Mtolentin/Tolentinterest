@@ -7,12 +7,12 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import WelcomeContainer from './session_form/welcome_container';
 
-import TinIndexContainer from './pins/pin_index_container';
-import TinShowContainer from './pins/pin_show_container';
-import TinCreateContainer from './pins/pin_create_form_container';
-import ShelvesIndexContainer from './boards/board_index_container';
+import TinIndexContainer from './tins/tin_index_container';
+import TinShowContainer from './tins/tin_show_container';
+import TinCreateContainer from './tins/tin_create_form_container';
+import ShelvesIndexContainer from './shelves/shelf_index_container';
 import UserProfileContainer from './user/user_profile_container';
-import ShelfShowContainer from './boards/board_show_container';
+import ShelfShowContainer from './shelves/shelf_show_container';
 
 const App = () => (
 
@@ -31,7 +31,7 @@ const App = () => (
             <AuthRoute path="/signup" component={SignupFormContainer} />
             <AuthRoute exact path="/" component={WelcomeContainer} />
             
-            <ProtectedRoute path="/pins/:tinId" component={TinShowContainer} />
+            <ProtectedRoute path="/tins/:tinId" component={TinShowContainer} />
             <ProtectedRoute path="/users/:userId/tins" component={TinIndexContainer} />
             <ProtectedRoute path="/users/:userId/shelves/:shelfId" component={ShelfShowContainer} />
             <ProtectedRoute path="/users/:userId/shelves" component={ShelvesIndexContainer} />

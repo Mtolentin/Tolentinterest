@@ -10,7 +10,7 @@ import { receiveUser, updateDetails } from '../../actions/user_actions';
 
 const mSTP = ({entities: {users}, session: {currentUserId}, errors}, {match}) => ({
     user: users[match.params.userId],
-    errors: errors.boards,
+    errors: errors.shelves,
     currentUserId
 })
 

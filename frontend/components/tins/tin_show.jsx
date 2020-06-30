@@ -53,14 +53,14 @@ class TinShow extends React.Component{
     }
 
     getSuggested(){
-        const {pins, currentUserId, chosenTinId} = this.props;
+        const {tins, currentUserId, chosenTinId} = this.props;
         let suggested = selectSuggestedTins(tins, currentUserId, chosenTinId);
         return suggested;
     }
 
     renderEditForm(){
         if (this.state.edit){
-            const {tins, shelves, chosenTinId, createShelf, errors, clearErrors, currentUserId, updateTin, deleteTin, saveToBoard} = this.props;
+            const {tins, shelves, chosenTinId, createShelf, errors, clearErrors, currentUserId, updateTin, deleteTin, saveToShelf} = this.props;
             return (
                 <EditTinForm 
                     tin={tins[chosenTinId]}
@@ -83,7 +83,7 @@ class TinShow extends React.Component{
         if (!shelves) return null;
         return (
             <div>
-                <div className="drop-down select-board show-select"
+                <div className="drop-down select-shelf show-select"
                     id="selected-text">
                     Select a Shelf
                 </div>
@@ -96,19 +96,19 @@ class TinShow extends React.Component{
                                 <li key={idx}
                                     value={shelf.id}
                                     className="shelf-name"
-                                    onClick={this.makeBoardSelection}
+                                    onClick={this.makeShelfSelection}
                                     >
-                                        {board.name}
+                                        {shelf.name}
                                 </li>
                                 )
                             })
                         }
 
-                        <a onClick={this.toggleBoardForm}>
+                        <a onClick={this.toggleShelfForm}>
                             <li key="a"
-                                className="create-board-option">
+                                className="create-shelf-option">
                                 <i className="fas fa-plus-circle"></i>
-                                Create board
+                                Create a shelf
                             </li>
                         </a>
 
@@ -153,15 +153,15 @@ class TinShow extends React.Component{
             const { createShelf, clearErrors, currentUserId } = this.props;
             
             return (<CreateShelfForm
-                        createBoard={createBoard}
+                        createShelf={createShelf}
                         clearErrors={clearErrors}
-                        closeBoardForm={this.toggleBoardForm}
+                        closeShelfForm={this.toggleShelfForm}
                         currentUserId={currentUserId}
                     />)
         }
     }
     
-    handleSaveToBoard(e){
+    handleSaveToShelf(e){
         e.preventDefault();
         
         let shelfTin = {
@@ -169,7 +169,7 @@ class TinShow extends React.Component{
             tin_id: parseInt(this.props.chosenTinId)
         }
 
-        this.props.saveToBoard(shelfTin);
+        this.props.saveToShelf(shelfTin);
         this.setState({confirm: true, chosenShelfId: ""}, this.toggleButtonLock());
     }
 
@@ -182,7 +182,7 @@ class TinShow extends React.Component{
         if (this.state.confirm) {
             return (
                 <div className="modal-child-round-box saved" onClick={this.closeConfirm}>
-                    <div className="pin-confirmation-box">
+                    <div className="tin-confirmation-box">
                         <h1>{`Saved!`}</h1>
                         <i className="far fa-times-circle"></i>
                     </div>
@@ -199,12 +199,12 @@ class TinShow extends React.Component{
     }
 
     toggleButtonLock() {
-        const {chosenBoardId} = this.state;
+        const {chosenShelfId} = this.state;
         const saveBtn = document.getElementById("save-rin");
     
     
         if (!saveBtn) return;
-        if (!chosenBoardId) {
+        if (!chosenShelfId) {
             saveBtn.disabled = true;
             saveBtn.classList.add("no-button");
         } else {
@@ -216,7 +216,7 @@ class TinShow extends React.Component{
 
     optionToEdit(){
         const { tins, chosenTinId, currentUserId } = this.props;
-        if (pins[chosenTinId].userId === currentUserId){
+        if (tins[chosenTinId].userId === currentUserId){
             return (
                 <div className="edit-tin" onClick={this.toggleEditForm}>
                     <i className="fas fa-pencil-alt"></i>
@@ -229,7 +229,7 @@ class TinShow extends React.Component{
         const { tins, chosenTinId, fetchTins, users} = this.props;
         
         if (!Object.values(tins).length) return null;
-        let showPin = tins[chosenTinId];
+        let showTin = tins[chosenTinId];
         let owner = users[showTin.userId];
         if (!owner) return null;
         this.toggleButtonLock();
@@ -261,8 +261,8 @@ class TinShow extends React.Component{
                             </div>
 
                             <div className="tin-top-buttons">
-                                <button id="save-tin" className="save-tin" onClick={this.handleSaveToBoard}>Save</button>
-                                {this.boardNames()}
+                                <button id="save-tin" className="save-tin" onClick={this.handleSaveToShelf}>Save</button>
+                                {this.shelfNames()}
                             </div>
 
                         </div>
