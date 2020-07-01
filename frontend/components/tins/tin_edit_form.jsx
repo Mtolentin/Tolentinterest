@@ -140,7 +140,7 @@ class EditTinForm extends React.Component {
 
 
                 <div className="drop-down-arrow-select-shelf-edit">
-                    <i className="fas fa-chevron-down"></i>
+                    <i className="fas fa-angle-down"></i>
                 </div>
             </div>
         )

@@ -115,7 +115,7 @@ class TinShow extends React.Component{
                     </ul>    
                 </div> 
                 <div className="drop-down-arrow-select-shelf">
-                    <i className="fas fa-chevron-down"></i>
+                    <i className="fas fa-angle-down"></i>
                 </div>
             </div>
         )

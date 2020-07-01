@@ -9,7 +9,9 @@ const NavBar = ({ currentUserId, logout }) => {
 
     return (
         <div>
+
             <nav className="header-logout">
+
                 <NavLink to="/home" className="icon">
                     <i id="logo" className="fab fa-pinterest"></i>
                 </NavLink>
@@ -23,17 +25,18 @@ const NavBar = ({ currentUserId, logout }) => {
                 </NavLink>
 
                 <div className="options">
-                    <div className="icon" onClick={showMenu}><i className="drop-down fas fa-chevron-down"></i></div>
+                    <div className="icon" onClick={showMenu}><i className="drop-down fas fa-angle-down"></i></div>
+                    
                     <div id="settings" className="menu-back" onClick={showMenu}>
                         <ul className="drop-down-menu" onClick={ e => e.stopPropagation()}>
                             <li onClick={logout}>Log out</li>
                         </ul>
                     </div>
+
                 </div>
 
             </nav>
-            
-            <div className="nav-space"></div>
+        
         </div>
     )
 }
