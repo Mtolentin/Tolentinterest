@@ -16,9 +16,7 @@ import ShelfShowContainer from './shelves/shelf_show_container';
 
 const App = () => (
 
-<div>
-
-
+    <div>
         <header>
             <ProtectedRoute path="/" component={NavBarContainer} />
         </header>

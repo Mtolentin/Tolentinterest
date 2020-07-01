@@ -3,7 +3,7 @@ class User < ApplicationRecord
     validates :password_digest, :session_token, :email, presence: true
     validates :password, length: {minimum: 6, allow_nil: true}
 
-    has_many :shelves
+    has_many :shelves,
         foreign_key: :author_id,
         class_name: :Shelve
 

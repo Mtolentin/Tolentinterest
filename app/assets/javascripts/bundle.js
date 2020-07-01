@@ -475,7 +475,7 @@ var fetchUser = function fetchUser(userId) {
 };
 var fetchUsers = function fetchUsers() {
   return function (dispatch) {
-    return _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["fUs"]().then(function (sers) {
+    return _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["fUs"]().then(function (users) {
       return dispatch(receiveAllUsers(users));
     }, function (error) {
       return dispatch(receiveUserErrors(error.responseJSON));
@@ -780,8 +780,8 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
     value: function demoUser(e) {
       e.preventDefault();
       var user = {
-        email: "demouser@gmail.com",
-        password: "123456"
+        email: "m477@null.net",
+        password: "hunter12"
       };
       this.props.processForm(user);
     }
@@ -1418,8 +1418,8 @@ var Welcome = /*#__PURE__*/function (_React$Component) {
     value: function demoUser(e) {
       e.preventDefault();
       var user = {
-        email: "demouser@gmail.com",
-        password: "123456"
+        email: "m477@null.net",
+        password: "hunter12"
       };
       this.props.processForm(user);
     }
@@ -3155,7 +3155,7 @@ var TinIndex = /*#__PURE__*/function (_React$Component) {
       var sortTins = this.shuffleTins();
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tin-index-box"
-      }, this.showTins(sorTins));
+      }, this.showTins(sortTins));
     }
   }]);
 

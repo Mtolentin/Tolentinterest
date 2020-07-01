@@ -113,7 +113,7 @@ class TinIndex extends React.Component{
         const sortTins = this.shuffleTins();
         return (
             <div className="tin-index-box">
-                {this.showTins(sorTins)}
+                {this.showTins(sortTins)}
             </div>
         )
     }

@@ -125,7 +125,7 @@
     height: auto;
     width: 100%;
     max-width: 600px;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 300ms ease-in;
 }
 

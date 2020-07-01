@@ -34,6 +34,6 @@ export const fetchUser = userId => dispatch => {
 
 export const fetchUsers = () => dispatch => {
     return UAU.fUs()
-        .then( sers => dispatch(receiveAllUsers(users)),
+        .then( users => dispatch(receiveAllUsers(users)),
         error => dispatch(receiveUserErrors(error.responseJSON)))
 }
