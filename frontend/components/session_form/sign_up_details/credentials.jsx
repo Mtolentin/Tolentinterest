@@ -43,7 +43,7 @@ class Credentials extends React.Component {
 
 
                         <div className="login-heading">
-                            <div><i id="logo" className="fab fa-pinterest"></i></div>
+                            <div><i id="logo" className="fas fa-cat"></i></div>
                             <h1>This is Tolentinterest</h1>
                             <div className="prompt">Come and Explore</div>
                         </div>

@@ -13,7 +13,7 @@ const NavBar = ({ currentUserId, logout }) => {
             <nav className="header-logout">
 
                 <NavLink to="/home" className="icon">
-                    <i id="logo" className="fab fa-pinterest"></i>
+                    <i id="logo" className="fas fa-cat"></i>
                 </NavLink>
 
                 <div className="a_space"></div>

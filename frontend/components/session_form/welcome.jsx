@@ -37,7 +37,7 @@ class Welcome extends React.Component{
 
                         <div className="login-signup">
 
-                            <div><i id="logo" className="fab fa-pinterest"></i></div>
+                            <div><i id="logo" className="fas fa-cat"></i></div>
                             <h2>This is Tolentinterest</h2>
                             <div>The Cat's Meow</div>
 
@@ -53,7 +53,7 @@ class Welcome extends React.Component{
 
                             <div>
                                 <Link to='/'>
-                                    <button className="welcome-demo button" onClick={this.demoUser}>Sample</button>
+                                    <button className="welcome-demo button" onClick={this.demoUser}>Take a Peek!</button>
                                 </Link>
                             </div>
 
