@@ -16,6 +16,8 @@ const NavBar = ({ currentUserId, logout }) => {
                     <i id="logo" className="fab fa-pinterest"></i>
                 </NavLink>
 
+                <div className="a_space"></div>
+
                 <div className="home-button">
                     <Link to="/home">Home</Link>
                 </div>

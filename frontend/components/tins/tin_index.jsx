@@ -10,7 +10,7 @@ class TinIndex extends React.Component{
             columns: 0,
             shuffle: false
         }
-        this.reorganizeTins = this.reorganizeTins.bind(this);
+        this.resetTins = this.resetTins.bind(this);
     }
 
 
@@ -19,25 +19,12 @@ class TinIndex extends React.Component{
         body.style.height = "auto";
         body.style.overflow = "visible";
         this.props.getInfo();
-        this.reorganizeTins();
+        this.resetTins();
         window.addEventListener("resize", this.reorganizeTins);
     }
 
     componentWillUnmount(){
         window.removeEventListener("resize", this.reorganizeTins);
-    }
-
-    addCreateTin(){
-        if (this.props.createOption){
-            return (
-                <NavLink to="/tin-builder" className="create-tin-button">
-                    <div className="image">
-                        <i className="fas fa-plus-circle"></i>
-                    </div>
-                    <div className="title">Create Tin</div>
-                </NavLink>
-            )
-        }
     }
 
     getNumCols(){
@@ -46,7 +33,7 @@ class TinIndex extends React.Component{
         return Math.floor((window.innerWidth - indexMargin) / tinWidth);
     }
 
-    reorganizeTins(){
+    resetTins(){
         const numCols = this.getNumCols();
         if (numCols !== this.state.columns && numCols > 0){
             this.setState({ 
@@ -93,7 +80,6 @@ class TinIndex extends React.Component{
 
                     return (
                         <div key={colNum} className="tin-column">
-                            {(colNum === 0) ? this.addCreateTin() : ""}
                             {tinCol.map((tin, idx) => {
                                 const lastTin = colNum === lastCol && idx === lastRow;
                                 return <TinIndexItem key={idx} tin={tin} lastTin={lastTin} />;
