@@ -55,12 +55,13 @@ class TinIndex extends React.Component{
         }
 
 
-        let shuffleTins = tins;
+        let shuffleTins = tins.map(a => [Math.random(), a]).sort((a, b) => a[0] - b[0]).map(a => a[1]);
         for (let i = 0; i < shuffleTins.length; i++) {
             let col = i % columns;
             tinCols[col].push(shuffleTins[i]);
         }
-        return tinCols;
+        
+        return tinCols.map(a => [Math.random(), a]).sort((a, b) => a[0] - b[0]).map(a => a[1]);
 
     }
 

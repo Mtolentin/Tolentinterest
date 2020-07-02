@@ -76,8 +76,6 @@ class LoginForm extends React.Component{
 
                                 <div className="login-form-buttons">
                                     <button className="login-button button" onClick={this.handleSubmit} >Log in</button>
-                                    <div>OR</div>
-                                    <button className="demo login-button button" onClick={this.demoUser}>Demo Login</button>
                                 </div>
 
 
