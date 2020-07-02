@@ -5,7 +5,7 @@ body{
 .header-logout{
     display: flex;
     justify-content: space-between;
-    align-items: right;
+    align-items: center;
     text-align: center;
     position: fixed;
     top: 0;
@@ -26,10 +26,6 @@ body{
     z-index: 50;
 }
 
-.a_space{
-    width: 90%
-}
-
 .scroll-shadow{
     box-shadow: 1px 1px 10px #e0e0e0;
 }
@@ -45,9 +41,8 @@ body{
 
 #logo{
     color: purple;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 500;
-    text-decoration: none;
 }
 
 
@@ -67,8 +62,8 @@ body{
     margin-top: 0;
     cursor: pointer;
     color: white;
-    background-color: orchid;
-    font-size: 12px;
+    background-color: black;
+    font-size: 16px;
     padding: 14px;
     font-family: inherit;
     font-weight: inherit;

@@ -1,2 +1,0 @@
-class Cann < ApplicationRecord
-end
