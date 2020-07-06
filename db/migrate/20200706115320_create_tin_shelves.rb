@@ -12,4 +12,3 @@ class CreateTinShelves < ActiveRecord::Migration[5.2]
 
   end
 end
-rails 
