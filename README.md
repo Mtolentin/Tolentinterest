@@ -1,24 +1,20 @@
-# README
+# Tolentinterest - my own version of Pinterest
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://tolentinterest.herokuapp.com/#/
 
-Things you may want to cover:
+## Basic Overview
 
-* Ruby version
+This is my ongoing endeavor to implement a clone of the popular site Pinterest.
+For nomenclature, Tins are the Pins from the original site, as well as Shelves
+instead of Boards.
 
-* System dependencies
+## Technologies
 
-* Configuration
+Tolentinterest utilizes a Rails Backend with React Frontend and CSS styling.
+Images are hosted on AWS S3 with the site deployed on Heroku.
 
-* Database creation
+## Future project directions:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+7/06 - There is still a lot of refactoring to take place, but the issue
+preventing initial deployment has been fixed. Tin show page still has to be
+implemented, as well as being able to upload and create new tins.
