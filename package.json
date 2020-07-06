@@ -1,5 +1,5 @@
 {
-  "name": "Tolentest5",
+  "name": "Tolentinterest",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.10.4",
@@ -29,8 +29,8 @@
     "postinstall": "webpack"
   },
   "engines": {
-    "node": "12.5.0",
-    "npm": "6.9.0"
+    "node": "10.3.0",
+    "npm": "6.14.5"
   },
   "keywords": [],
   "author": "",
