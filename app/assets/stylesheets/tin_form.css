@@ -45,7 +45,7 @@
 
 .tin-top-buttons > button .select-shelf{
     width: 150px;
-    color: rgb(0, 87, 6);
+    color: darkorchid;
     padding: 15px;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .tin-top-buttons > .save-tin{
-    background-color: #1DB954;
+    background-color: orchid;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
     color: white;
@@ -312,14 +312,14 @@
 .save-tin:focus,
 .drop-down:focus{
     outline-style: none;
-    border: 3px solid rgb(0, 223, 0);
+    border: 3px solid orchid;
     margin: 9px;
     border-radius: 10px;
 }
 
 .shelf-selection select:focus{
     outline-style: none;
-    border: 3px solid rgb(0, 233, 0);
+    border: 3px solid orchid;
     margin: 7px;
 }
 
@@ -358,7 +358,7 @@
 
 .bottom-options button:active{
     outline-style: none;
-    border: 3px solid rgb(0, 233, 0);
+    border: 3px solid orchid;
     margin: 7px;
 }
 
@@ -368,13 +368,13 @@
 
 .save-or-cancel > .save-edit, 
 .continue{
-    background-color: #1DB954;
+    background-color: orchid;
     color: rgb(255, 255, 255);
 }
 
 .save-or-cancel > .save-edit:hover, 
 .continue:hover{
-    background-color: rgb(28, 143, 36);
+    background-color: magenta;
 }
 
 .tin-create-inputs{
@@ -434,12 +434,12 @@
 
 .tin-top-buttons >.no-button,
 .save-or-cancel > .no-button{
-    background-color: rgb(147, 231, 147);
+    background-color: pink;
 }
 
 .no-button:hover,
 .save-or-cancel > .no-button:hover{
-    background-color: rgb(147, 231, 147);
+    background-color: pink;
     cursor: initial;
 }
 
@@ -458,7 +458,7 @@
     align-items: center;
     font-size: 50px;
     padding: 20px;
-    color: lightgreen;
+    color: pink;
 }
 
 .tin-confirmation-box > p{
