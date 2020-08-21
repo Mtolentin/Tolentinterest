@@ -1,0 +1,489 @@
+.pin-modal{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.pin-form-box{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px;
+    padding-bottom: 40px;
+    width: 840px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 1px 1px 10px #e0e0e0;
+}
+
+.pin-top-buttons{
+    height: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: end;
+    position: relative;
+}
+
+.pin-top-buttons > div{
+    height: 100%;
+}
+
+.pin-top-buttons > button{
+    width: 100px;
+    font-size: 18px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-family: inherit;
+    border-radius: 10px;
+    border: none;
+    box-sizing: border-box;
+    font-weight: bold;
+    background-color: lightgrey;
+}
+
+.pin-top-buttons > button .select-board{
+    width: 150px;
+    color: rgb(0, 87, 6);
+    padding: 15px;
+}
+
+.select-board{
+    padding-right: 40px;
+    width: auto;
+}
+
+.edit{
+    width: 350px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.show-select{
+    min-width: 170px;
+}
+
+.pin-top-buttons > .save-pin{
+    background-color: #1DB954;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    color: white;
+    height: 40px;
+    width: auto;
+    padding: 0px 10px;
+    font-size: 16px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.save-pin:hover{
+    cursor: pointer;
+    background-color: rgb(0, 87, 6);
+}
+
+.pin-main-content{
+    display: flex;
+    justify-content: center;
+}
+
+.pin-main-content .pin-image-box{
+    width: 50%;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+#image-background{
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 340px;
+    height: 454px;
+}
+
+#image-background:hover, .pin-image-back:hover{
+    cursor: pointer;
+    background-color: rgb(221, 221, 221);
+}
+
+#file-upload{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.pin-image-back{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 434px;
+    padding: 10px;
+    border: 2px dashed lightgray;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgb(233, 233, 233);
+    position: relative;
+}
+
+.pin-image-back input{
+    display: flex;
+    justify-content: center;
+    padding-left: 40px;
+    margin: 20px;
+    text-align: center;
+}
+
+.pin-image-box i{
+    font-size: 40px;
+    color: rgb(107, 107, 107);
+}
+
+.save-from-site{
+    width: 340px;
+    height: 48px;
+}
+
+.pin-main-content .pin-create-fields{
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.edit-pin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+}
+
+.edit-pin:hover{
+    cursor: pointer;
+    width: 40px;
+    background-color: rgba(0, 0, 0, 0.07);
+    border-radius: 50%;
+}
+
+.edit-pin > i{
+    font-size: 20px;
+
+    color: black;
+}
+
+.pin-edit-form-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 900px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.edit-pin-board{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.modal-child-round-box > h1{
+    margin: 0;
+    padding: 32px;
+    font-family: "Noto Sans";
+}
+
+.edit-pin-board .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 66%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+}
+
+.edit-details, .board-selection{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.edit-details > div, .board-selection > div{
+    padding: 0px 16px 16px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    color: rgb(59, 59, 59);
+}
+
+.edit-details > div{
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.edit-details textarea, 
+.edit-details input, 
+.board-selection select,
+.pin-add-title input,
+.pin-add-description textarea,
+.pin-link input{
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    resize: none;
+    border-radius: 10px;
+    border: 2px solid rgb(218, 218, 218);
+    width: 350px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.board-selection select{
+    border: none;
+    background-color: rgb(235, 235, 235);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.board-selection select:hover{
+    cursor: pointer;
+}
+
+.drop-down-arrow{
+    position: absolute;
+    right: 57px;
+    bottom: 48px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.drop-down-arrow-select-board{
+    position: absolute;
+    right: 70px;
+    bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.drop-down-arrow-select-board-edit{
+    position: absolute;
+    right: 67px;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.edit-details input:focus, 
+.edit-details textarea:focus,
+.pin-add-title input:focus,
+.pin-add-description textarea:focus,
+.pin-link input:focus
+.save-pin:focus,
+.drop-down:focus{
+    outline-style: none;
+    border: 3px solid rgb(0, 223, 0);
+    margin: 9px;
+    border-radius: 10px;
+}
+
+.board-selection select:focus{
+    outline-style: none;
+    border: 3px solid rgb(0, 233, 0);
+    margin: 7px;
+}
+
+.edit-pin-board .image{
+    width: 33%;
+    height: 400px;
+    max-height: 400px;
+    padding: 12px 16px;
+}
+
+.bottom-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.bottom-options button, 
+.continue{
+    height: 40px;
+    width: auto;
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    border: inherit;
+    border-radius: 30px;
+    background-color: rgb(231, 231, 231);
+    color: black;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.bottom-options button:active{
+    outline-style: none;
+    border: 3px solid rgb(0, 233, 0);
+    margin: 7px;
+}
+
+.bottom-options button:hover{
+    background-color: rgb(199, 199, 199);
+}
+
+.save-or-cancel > .save-edit, 
+.continue{
+    background-color: #1DB954;
+    color: rgb(255, 255, 255);
+}
+
+.save-or-cancel > .save-edit:hover, 
+.continue:hover{
+    background-color: rgb(28, 143, 36);
+}
+
+.pin-create-inputs{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.pin-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pin-details input, .pin-details textarea, .pin-link input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+.pin-add-title input{
+    font-size: 36px;
+    font-weight: 700;
+    height: 48px;
+    padding: 10px;
+}
+
+.pin-owner{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+.pin-owner i{
+    padding: 10px;
+    font-size: 20px;
+}
+
+.show-background{
+    display: none;
+    z-index: -1;
+    position: absolute;
+}
+
+.pin-top-buttons >.no-button,
+.save-or-cancel > .no-button{
+    background-color: rgb(147, 231, 147);
+}
+
+.no-button:hover,
+.save-or-cancel > .no-button:hover{
+    background-color: rgb(147, 231, 147);
+    cursor: initial;
+}
+
+.pin-confirmation-box{
+    width: auto;
+    padding: 50px;
+}
+
+.pin-confirmation-box h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.confirm-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    padding: 20px;
+    color: lightgreen;
+}
+
+.pin-confirmation-box > p{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.saved > .pin-confirmation-box{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.saved > i{
+    font-size: 20px;
+}
+
+.saved{
+    position: fixed;
+    background-color: black;
+    margin: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    top: unset;
+    bottom: 0;
+    z-index: 100;
+}

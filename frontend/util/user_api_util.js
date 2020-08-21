@@ -1,4 +1,6 @@
-export const uU = user => {
+import { $CombinedState } from "redux"
+
+export const updateUser = user => {
     return $.ajax({
         url: `/api/users/${user.id}`,
         method: "PATCH",
@@ -6,14 +8,14 @@ export const uU = user => {
     })
 }
 
-export const fUs = () => {
+export const fetchUsers = () => {
     return $.ajax({
         url: '/api/users',
         method: "GET"
     })
 }
 
-export const fU = userId => {
+export const fetchUser = userId => {
     return $.ajax({
         url: `/api/users${userId}`,
         method: "GET"

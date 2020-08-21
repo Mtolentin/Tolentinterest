@@ -9,36 +9,26 @@ const NavBar = ({ currentUserId, logout }) => {
 
     return (
         <div>
-
             <nav className="header-logout">
-
                 <NavLink to="/home" className="icon">
-                    <i id="logo" className="fas fa-cat "></i>
+                    <i id="logo" className="fab fa-pinterest"></i>
                 </NavLink>
-
-                <div className="a_space"></div>
-
                 <div className="home-button">
                     <Link to="/home">Home</Link>
                 </div>
-
-                <NavLink to={`/users/${currentUserId}/tins`} className="icon profile">
+                <NavLink to={`/users/${currentUserId}/pins`} className="icon profile">
                     <i className="fas fa-user"></i>
                 </NavLink>
-
                 <div className="options">
-                    <div className="icon" onClick={showMenu}><i className="drop-down fas fa-angle-down"></i></div>
-                    
+                    <div className="icon" onClick={showMenu}><i className="drop-down fas fa-chevron-down"></i></div>
                     <div id="settings" className="menu-back" onClick={showMenu}>
                         <ul className="drop-down-menu" onClick={ e => e.stopPropagation()}>
                             <li onClick={logout}>Log out</li>
                         </ul>
                     </div>
-
                 </div>
-
             </nav>
-        
+            <div className="nav-space"></div>
         </div>
     )
 }

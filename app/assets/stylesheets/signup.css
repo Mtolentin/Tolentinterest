@@ -45,7 +45,7 @@
 }
 
 .radio-fields div input{
-    color: orchid;
+    color: #1DB954;
 }
 
 .radio-fields div label{
@@ -69,6 +69,70 @@
     justify-content: flex-end;
     align-items: center;
     margin-right: 200px;
+}
+
+#language, #region{
+    margin: 10px;
+    width: 200px;
+    height: 20px;
+    background-color: rgb(233, 233, 233);
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#language >.drop-down, #region > .drop-down{
+    position: relative;
+    width: 100%;
+}
+
+#language:focus, #region:focus{
+    outline: none;
+    border: 2px solid rgb(0, 223, 0);
+}
+
+#language-names, #region-names{
+    position: absolute;
+    overflow: scroll;
+    width: 200px;
+    height: 400px;
+    top: 227px;
+    right: 71px;
+}
+
+#region-names{
+    top: 317px;
+}
+
+.selected-text-language, .selected-text-region{
+    border-radius: 10px;
+    background-color: rgb(180, 180, 180);
+    position: relative;
+}
+
+#language:hover, #region:hover{
+    background-color: rgb(173, 173, 173);
+    cursor: pointer;
+}
+
+.drop-down-arrow-select-language{
+    position: absolute;
+    color: rgb(201, 201, 201);
+    right: 90px;
+    bottom: 295px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.drop-down-arrow-select-region{
+    bottom: 205px;
 }
 
 .prompt{

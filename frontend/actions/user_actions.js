@@ -1,4 +1,4 @@
-import * as UAU from '../util/user_api_util';
+import * as UserAPIUtil from '../util/user_api_util';
 import { receiveCurrentUser } from './session_actions';
 
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
@@ -21,19 +21,19 @@ export const receiveAllUsers = users => ({
 })
 
 export const updateDetails = user => dispatch => {
-    return UAU.uU(user)
-        .then( user => dispatch(receiveCurrentUser(user)),
+    return UserAPIUtil.updateUser(user)
+        .then( u => dispatch(receiveCurrentUser(u)),
         error => dispatch(receiveUserErrors(error.responseJSON)))
 }
 
 export const fetchUser = userId => dispatch => {
-    return UAU.fU(userId)
+    return UserAPIUtil.fetchUser(userId)
         .then( user => dispatch(receiveAllUsers(user)),
         error => dispatch(receiveUserErrors(error.responseJSON)))
 }
 
 export const fetchUsers = () => dispatch => {
-    return UAU.fUs()
-        .then( users => dispatch(receiveAllUsers(users)),
-        error => dispatch(receiveUserErrors(error.responseJSON)))
+    return UserAPIUtil.fetchUsers()
+        .then(users => dispatch(receiveAllUsers(users)),
+            error => dispatch(receiveUserErrors(error.responseJSON)))
 }

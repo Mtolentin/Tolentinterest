@@ -1,56 +1,39 @@
-
-
-
-export const selectUserTins = (tins, userId) => {
-    let userTins = [];
-    
-    Object.values(tins).forEach(tin => {
-        if (tin.author_id === userId) userTins.push(tin);
+export const selectUserPins = (pins, userId) => {
+    let userPins = [];
+    Object.values(pins).forEach(pin => {
+        if (pin.userId === userId) userPins.push(pin);
     })
-    
-    return userTins;
+    return userPins;
 };
 
-
-
-export const selectOtherUsersTins = (tins, userId) => {
-    let selectedTins = [];
-    
-    Object.values(tins).forEach(tin => {
-        if (tin.author_id !== userId) selectedTins.push(tin);
+export const selectOtherUsersPins = (pins, userId) => {
+    let selectedPins = [];
+    Object.values(pins).forEach(pin => {
+        if (pin.userId !== userId) selectedPins.push(pin);
     })
-    
-    return selectedTins;
+    return selectedPins;
 }
 
-
-
-export const selectSuggestedTins = (tins, _author_Id, tinId) => {
-
-    let suggestedTins = [];
-    
-    Object.values(tins).forEach( tin => {
-        if (tin.id === tinId) return;
-        if (tin.id / 10 === tins[tinId] / 10) suggestedTins.push(tin);
+export const selectSuggestedPins = (pins, userId, pinId) => {
+    //select based on category, ignore currently viewed pin
+    let suggestedPins = [];
+    Object.values(pins).forEach( pin => {
+        if (pin.id === pinId) return;
+        if (pin.category === pins[pinId].category) suggestedPins.push(pin);
+        // if ((pin.userId !== userId) && (pin.category === pins[pinId].category)) suggestedPins.push(pin);
     })
-    
-    return suggestedTins;
+    return suggestedPins;
 };
 
-
-
-export const selectShelfTins = (tinShelves, tins, shelfId) => {
-    if (Object.values(tinShelves).length === 0) return [];
-    let tinIds = [];
-    let tinsOnShelf = [];
-
-    Object.values(tinShelves).forEach( tinShelf => {
-        if (tinShelf.shelf_Id === shelfId) tinIds.push(tinShelf.shelf_Id)
+export const selectBoardPins = (boardPins, pins, boardId) => {
+    if (Object.values(boardPins).length === 0) return [];
+    let pinIds = [];
+    let pinsOnBoard = [];
+    Object.values(boardPins).forEach( bp => {
+        if (bp.boardId === boardId) pinIds.push(bp.pinId)
     })
-
-    for(let i = 0; i < tinIds.length; i++){
-        tinsOnShelf.push(tins[tinIds[i]]);
+    for(let i = 0; i < pinIds.length; i++){
+        pinsOnBoard.push(pins[pinIds[i]]);
     }
-
-    return tinsonShelf;
+    return pinsOnBoard;
 }

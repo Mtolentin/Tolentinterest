@@ -1,0 +1,165 @@
+.user-profile-box{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-profile-box .header{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header .top-buttons > div{
+    display: flex;
+    margin-top: 30px;
+    height: 48px;
+}
+
+.header .user-details{
+    display: flex;
+    width: 100%;
+}
+
+.user-details .info{
+    width: 75%;
+    display: flex;
+    font-size: 36px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info h3{
+    padding-left: 20px;
+    font-size: 14px;
+    margin: 0;
+}
+
+.user-details .image{
+    width: 120px;
+    height: 120px;
+}
+
+.profile-pic{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.user-selection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.user-selection .button{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    font-size: 16px;
+    padding: 14px;
+    margin: 10px;
+    font-family: inherit;
+    font-weight: bolder;
+    border-radius: 30px;
+    border: inherit;
+    box-sizing: border-box;
+    width: auto;
+    
+}
+
+.top-buttons .icon i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+}
+
+.top-buttons .icon:hover{
+    width: 48px;
+    height: 48px;
+}
+
+#create-options{
+    right: initial;
+    top: 167px;
+    padding: 2px;
+    margin: 2px;
+    width: auto;
+    font-weight: bolder;
+}
+
+#create-options li{
+    color: black;
+    margin: 0px;
+}
+
+#create-options li a:visited{
+    color: black;
+}
+
+.edit-details .user-edit-form-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.user-edit-details{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.user-edit-details .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    padding: 20px;
+}
+
+.edit-details .content div{
+    display: flex;
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.edit-details .content div:last-of-type{
+    border-bottom: none;
+}
+
+.edit-details .content div p{
+    width: 30%;
+    width: 150px;
+}
+
+.edit-details .content input,
+.edit-details .content textarea{
+    width: 60%;
+}
+
+.user-edit-details .image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+}
+
+.user-edit-details .image img{
+    width: 90px;
+    height: 90px;
+}
+
+.user-edit-form-box .bottom-options{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+}

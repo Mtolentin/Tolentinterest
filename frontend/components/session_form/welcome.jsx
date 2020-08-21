@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 class Welcome extends React.Component{
     
     constructor(props){
@@ -17,60 +16,41 @@ class Welcome extends React.Component{
 
     demoUser(e){
         e.preventDefault();
-        const user = { email: "m477@null.net", password: "hunter12"}
+        const user = {
+            email: "m477@null.net",
+            password: "hunter12"
+        }
         this.props.processForm(user);
     }
 
-
-
     render(){
-
         return (
-
-
             <div>
-
-
                 <div className="modal-background">
                     <div className="modal-child" onClick={e => e.stopPropagation()}>
-
-
                         <div className="login-signup">
-
-                            <div><i id="logo" className="fas fa-cat"></i></div>
+                            <div><i id="logo" className="fab fa-pinterest"></i></div>
                             <h2>This is Tolentinterest</h2>
-                            <div>The Cat's Meow</div>
-
-
+                            <div>What a Wonderful World</div>
                             <div className="buttons">
                                 <Link to='/login'>
                                     <button className="login-button button">Log in</button>
                                 </Link>
                                 <Link to='/signup'>
-                                    <button className="signup-button button">Create Account</button>
+                                    <button className="signup-button button">Sign up</button>
                                 </Link>
                             </div>
-
                             <div>
                                 <Link to='/'>
-                                    <button className="welcome-demo button" onClick={this.demoUser}>Take a Peek!</button>
+                                    <button className="welcome-demo button" onClick={this.demoUser}>Demo</button>
                                 </Link>
                             </div>
-
-
                         </div>
-
-
                     </div>
                 </div>
-
-
             </div>
-
-
         )
     }
-
 }
 
 export default Welcome;
