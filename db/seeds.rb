@@ -14,7 +14,7 @@ Shelve.destroy_all
 TinShelve.destroy_all
 
 
-u1 = User.create!( username: "Demoguy", password: "hunter12",
+u1 = User.create!( username: "Guest", password: "hunter12",
                       email: "m477@null.net"                )
 
 u2 = User.create!( username: "Demogu2", password: "hunter13",
@@ -35,74 +35,70 @@ u6 = User.create!( username: "Demogu6", password: "hunter17",
 u7 = User.create!( username: "Matthew", password: "hunter18",
                       email: "m483@null.net"                )
 
-s1 = Shelve.create!( author_id: u1.id, name: "Young Stella",
-                     about: "These are the first 10 pics."  )
+s1 = Shelve.create!( author_id: u1.id, name: "Locations",
+                     about: "Some of the best places I've been!"  )
 
-(1..9).each do |num|
-    filename = bucket + "#{num}.jpeg"
-    tin = Tin.create!(  author_id: u2.id, title: "ofYoung",
-                        about: "So cute!",
-                        photo: { io: open(filename), 
-                                 filename: "#{num}.jpeg" })
-    TinShelve.create!(shelve_id: s1.id, tin_id: tin.id)
-end
+s2 = Shelve.create!( author_id: u3.id, name: "Books",
+                     about: "Books I've yet to read!"   )
 
-s2 = Shelve.create!( author_id: u3.id, name: "Young Stella2",
-                     about: "These are the next 10 pics."   )
+s3 = Shelve.create!( author_id: u4.id, name: "Good Food",
+                     about: "I wish I could eat these all over again!"        )
 
-(10..19).each do |num|
-    filename = bucket + "#{num}.jpeg"
-    tin = Tin.create!(  author_id: u3.id, title: "ofYoung",
-                        about: "So cute!",
-                        photo: { io: open(filename), 
-                                 filename: "#{num}.jpeg" })
-    TinShelve.create!(shelve_id: s2.id, tin_id: tin.id)
-end
+s4 = Shelve.create!( author_id: u5.id, name: "The Most Important Peole",
+                     about: "This is my cast of characters."  )
 
-s3 = Shelve.create!( author_id: u4.id, name: "Young Stella3",
-                     about: "Here are 20 more pics."        )
-
-(20..39).each do |num|
-    filename = bucket + "#{num}.jpeg"
-    tin = Tin.create!(  author_id: u4.id, title: "ofYoung",
-                        about: "So cute!",
-                        photo: { io: open(filename), 
-                                    filename: "#{num}.jpeg"})
-    TinShelve.create!(shelve_id: s3.id, tin_id: tin.id)
-end
-
-s4 = Shelve.create!( author_id: u5.id, name: "Young Stella4",
-                     about: "These are some 20 more pics."  )
-
-(40..59).each do |num|
-    filename = bucket + "#{num}.jpeg"
-    tin = Tin.create!(  author_id: u5.id, title: "ofYoung",
-                        about: "So cute!",
-                        photo: { io: open(filename), 
-                                    filename: "#{num}.jpeg"})
-    TinShelve.create!(shelve_id: s4.id, tin_id: tin.id)
-end
-
-s5 = Shelve.create!(  author_id: u6.id, name: "Young Stella5",
+s5 = Shelve.create!(  author_id: u6.id, name: "Young Stella",
                      about: "Here are 30 more pics of her!" )
 
-(60..89).each do |num|
-    filename = bucket + "#{num}.jpeg"
-    tin = Tin.create!(  author_id: u6.id, title: "ofYoung",
+(1..35).each do |num|
+    filename = bucket + "one#{num}.jpeg"
+    tin = Tin.create!(  author_id: u3.id, 
+                        title: "ofYoung",
                         about: "So cute!",
-                        photo: { io: open(filename), 
-                                    filename: "#{num}.jpeg"})
+                        photo: { 
+                            io: open(filename), 
+                            filename: "one#{num}.jpeg" 
+                        })
+    TinShelve.create!(shelve_id: s1.id, tin_id: tin.id)
+
+    filename = bucket + "two#{num}.jpeg"
+    tin = Tin.create!(  author_id: u4.id, 
+                        title: "ofYoung",
+                        about: "So cute!",
+                        photo: { 
+                            io: open(filename), 
+                            filename: "two#{num}.jpeg" 
+                        })
+    TinShelve.create!(shelve_id: s2.id, tin_id: tin.id)
+
+    filename = bucket + "three#{num}.jpeg"
+    tin = Tin.create!(  author_id: u5.id, 
+                        title: "ofYoung",
+                        about: "So cute!",
+                        photo: { 
+                            io: open(filename), 
+                            filename: "three#{num}.jpeg" 
+                        })
+    TinShelve.create!(shelve_id: s3.id, tin_id: tin.id)
+
+    filename = bucket + "four#{num}.jpeg"
+    tin = Tin.create!(  author_id: u6.id, 
+                        title: "ofYoung",
+                        about: "So cute!",
+                        photo: { 
+                            io: open(filename), 
+                            filename: "four#{num}.jpeg" 
+                        })
+    TinShelve.create!(shelve_id: s4.id, tin_id: tin.id)
+
+    filename = bucket + "five#{num}.jpeg"
+    tin = Tin.create!(  author_id: u7.id, 
+                        title: "ofYoung",
+                        about: "So cute!",
+                        photo: { 
+                            io: open(filename), 
+                            filename: "five#{num}.jpeg" 
+                        })
     TinShelve.create!(shelve_id: s5.id, tin_id: tin.id)
-end
 
-s6 = Shelve.create!( author_id: u7.id, name: "Young Stella6",
-                     about: "And here are the final five!"  )
-
-(90..94).each do |num|
-    filename = bucket + "#{num}.jpeg"
-    tin = Tin.create!(  author_id: u7.id, title: "ofYoung",
-                        about: "So cute!",
-                        photo: { io: open(filename), 
-                                    filename: "#{num}.jpeg"})
-    TinShelve.create!(shelve_id: s6.id, tin_id: tin.id)
 end
