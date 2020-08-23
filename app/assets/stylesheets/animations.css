@@ -24,7 +24,7 @@
     height: 20px;
     width: 20px;
     border: 5px solid rgb(228, 228, 228);
-    border-top: 5px solid lightgreen;
+    border-top: 5px solid pink;
     border-radius: 50%;
     position: absolute;
     top: 55px;
@@ -37,8 +37,8 @@
     height: 40px;
     width: 40px;
     border: 10px solid rgb(228, 228, 228);
-    border-top: 10px solid lightgreen;
-    border-bottom: 10px solid lightgreen;
+    border-top: 10px solid pink;
+    border-bottom: 10px solid pink;
     border-radius: 50%;
     animation: spin 800ms linear infinite;
     -webkit-animation: spin 800ms linear infinite;

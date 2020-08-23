@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getSplashBack } from '../../util/splash_background_util';
 
 class LoginForm extends React.Component{
     constructor(props){
@@ -40,17 +39,13 @@ class LoginForm extends React.Component{
         const {errors} = this.props;
         return (
             <div>
-                {getSplashBack()}
                 <div className="modal-background">
-                    <div className="side-button">
-                        <Link to="/signup">Sign Up</Link>
-                    </div>
                     <div className="modal-child" onClick={e => e.stopPropagation()}>
                         <div className="login-form-box">
                             <form className="login-form">
                                 <div className="login-heading">
                                     <div><i id="logo" className="fab fa-pinterest"></i></div>
-                                    <h1>Welcome to Peridot</h1>
+                                    <h1>This is Tolentinterest</h1>
                                 </div>
                                 <div className="login-fields">
                                     <input type='text' placeholder="Email" value={this.state.email} onChange={this.update("email")} />
@@ -66,7 +61,7 @@ class LoginForm extends React.Component{
                                 </div>
                             </form>
                             <div className="signup-link">
-                                <Link to='/signup'>Not on Peridot yet? Sign up</Link>
+                                <Link to='/signup'>Create a New Account</Link>
                             </div>
                         </div>
                     </div>

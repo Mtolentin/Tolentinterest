@@ -45,7 +45,7 @@
 }
 
 .radio-fields div input{
-    color: #1DB954;
+    color: magenta;
 }
 
 .radio-fields div label{
@@ -92,7 +92,7 @@
 
 #language:focus, #region:focus{
     outline: none;
-    border: 2px solid rgb(0, 223, 0);
+    border: 2px solid purple;
 }
 
 #language-names, #region-names{

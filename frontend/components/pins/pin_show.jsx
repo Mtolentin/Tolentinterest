@@ -7,6 +7,7 @@ import { selectSuggestedPins } from '../../reducers/selectors';
 
 class PinShow extends React.Component{
     constructor(props){
+        debugger
         super(props)
         this.state={
             edit: false,
@@ -185,10 +186,10 @@ class PinShow extends React.Component{
         const {chosenBoardId} = this.state;
         const saveBtn = document.getElementById("save-pin");
         if (!saveBtn) return;
-        if (!chosenBoardId) { //lock button
+        if (!chosenBoardId) {
             saveBtn.disabled = true;
             saveBtn.classList.add("no-button");
-        } else { //unlock
+        } else {
             saveBtn.disabled = false;
             saveBtn.classList.remove("no-button");
         }
@@ -206,10 +207,11 @@ class PinShow extends React.Component{
     }
 
     render() {
+        debugger
         const { pins, chosenPinId, fetchPins, users} = this.props;
         if (!Object.values(pins).length) return null;
         let showPin = pins[chosenPinId];
-        let owner = users[showPin.userId];
+        let owner = users[showPin.author_id];
         if (!owner) return null;
         this.toggleButtonLock();
         return (

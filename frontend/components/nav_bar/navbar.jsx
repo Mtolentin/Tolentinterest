@@ -11,7 +11,8 @@ const NavBar = ({ currentUserId, logout }) => {
         <div>
             <nav className="header-logout">
                 <NavLink to="/home" className="icon">
-                    <i id="logo" className="fab fa-pinterest"></i>
+                    <img src="../../../app/assets/images/favicon_io/apple-icon-57x57.png"/>
+                    {/* <i id="logo" className="fab fa-pinterest"></i> */}
                 </NavLink>
                 <div className="home-button">
                     <Link to="/home">Home</Link>

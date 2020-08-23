@@ -27,7 +27,7 @@ class Api::TinsController < ApplicationController
 
     def update
         @tin = Tin.find_by(id: params[:id])
-        if @tin && @tin.user_id == current_user.id
+        if @tin && @tin.author_id == current_user.id
             if @tin.update(tin_params)
                 render "/api/tins/show"
             else
@@ -40,7 +40,7 @@ class Api::TinsController < ApplicationController
 
     def destroy
         @tin = Tin.find_by(id: params[:id])
-        if @tin && @tin.user_id == current_user.id
+        if @tin && @tin.author_id == current_user.id
             if @tin.destroy
                 render json: @tin.id
             else 

@@ -51,7 +51,7 @@ class EditPinForm extends React.Component {
         if (pin.userId === currentUserId) {
             let newUser = {
                 id: pin.id,
-                user_id: currentUserId,
+                author_id: currentUserId,
                 title,
                 description,
                 link

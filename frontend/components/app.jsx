@@ -26,11 +26,11 @@ const App = () => (
             <AuthRoute path="/signup" component={SignupFormContainer} />
             <AuthRoute exact path="/" component={WelcomeContainer} />
 
-            <ProtectedRoute path="/pins/:pinId" component={PinShowContainer} />
+            <ProtectedRoute path="/tins/:tinId" component={PinShowContainer} />
             <ProtectedRoute path="/users/:userId/pins" component={PinIndexContainer} />
 
-            <ProtectedRoute path="/users/:userId/boards/:boardId" component={BoardShowContainer} />
-            <ProtectedRoute path="/users/:userId/boards" component={BoardIndexContainer} />
+            <ProtectedRoute path="/users/:userId/shelve/:shelveId" component={BoardShowContainer} />
+            <ProtectedRoute path="/users/:userId/shelves" component={BoardIndexContainer} />
             
 
             <ProtectedRoute path="/pin-builder" component={PinCreateContainer} />

@@ -60,18 +60,18 @@ class PinIndex extends React.Component{
         const { pins } = this.props;
         const { columns, shuffle } = this.state;
         if (!shuffle) return [];
-        //array of columns
+
         let pinCols = new Array(columns);
         for (let i = 0; i < pinCols.length; i++) {
             pinCols[i] = new Array(0);
         }
-        //shuffle pins
+
         let shufflePins = pins;
-        // for (let i = shufflePins.length - 1; i > 0; i--) {
-        //     const randIdx = Math.floor(Math.random() * (i + 1));
-        //     [shufflePins[i], shufflePins[randIdx]] = [shufflePins[randIdx], shufflePins[i]];
-        // }
-        //add pins to columns
+        for (let i = shufflePins.length - 1; i > 0; i--) {
+            const randIdx = Math.floor(Math.random() * (i + 1));
+            [shufflePins[i], shufflePins[randIdx]] = [shufflePins[randIdx], shufflePins[i]];
+        }
+
         for (let i = 0; i < shufflePins.length; i++) {
             let col = i % columns;
             pinCols[col].push(shufflePins[i]);
@@ -80,15 +80,15 @@ class PinIndex extends React.Component{
     }
 
 
-    showPins(masonryPins){
+    showPins(pinList){
         const { pins } = this.props;
         const { columns } = this.state;
-        if (!pins || pins.length === 0 || masonryPins.length === 0 || !columns) return null;
-        const lastCol = masonryPins.length - 1;
-        const lastRow = masonryPins[lastCol].length - 1;
+        if (!pins || pins.length === 0 || pinList.length === 0 || !columns) return null;
+        const lastCol = pinList.length - 1;
+        const lastRow = pinList[lastCol].length - 1;
         return (
             <div className="all-pins-box">
-                {(masonryPins).map((pinCol, colNum) => {
+                {(pinList).map((pinCol, colNum) => {
                     return (
                         <div key={colNum} className="pin-column">
                             {(colNum === 0) ? this.addCreatePin() : ""}
@@ -104,10 +104,10 @@ class PinIndex extends React.Component{
     }
 
     render(){
-        const masonryPins = this.shufflePins();
+        const pinList = this.shufflePins();
         return (
             <div className="pin-index-box">
-                {this.showPins(masonryPins)}
+                {this.showPins(pinList)}
             </div>
         )
     }

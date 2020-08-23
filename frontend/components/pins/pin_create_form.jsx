@@ -6,7 +6,7 @@ class CreatePinForm extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            user_id: this.props.owner.id,
+            author_id: this.props.owner.id,
             title: '',
             description: '',
             link: '',
@@ -46,12 +46,12 @@ class CreatePinForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.disableFormButton();
-        const {user_id, title, description, link, chosenBoardId, photoFile} = this.state;
+        const {author_id, title, description, link, chosenBoardId, photoFile} = this.state;
         const formData = new FormData();
         formData.append('pin[title]', title);
         formData.append('pin[description]', description);
         formData.append('pin[link]', link);
-        formData.append('pin[user_id]', user_id);
+        formData.append('pin[author_id]', author_id);
         if (photoFile){
             formData.append('pin[photo]', photoFile)
         }
@@ -116,7 +116,7 @@ class CreatePinForm extends React.Component{
                         <div className="pin-confirmation-box">
                             <div className="confirm-image"><i className="far fa-check-circle"></i></div>
                             <h1>Success!</h1>
-                            <p><NavLink className="continue" to={`/users/${this.state.user_id}/pins`}>Continue</NavLink></p>
+                            <p><NavLink className="continue" to={`/users/${this.state.author_id}/pins`}>Continue</NavLink></p>
                         </div>
                     </div>
                 </div>

@@ -49,7 +49,7 @@
 
 .login-fields > input:focus{
     outline-style: none;
-    border: 3px solid rgb(0, 223, 0);
+    border: 3px solid pink;
 }
 
 .login-form{
@@ -78,11 +78,11 @@
 }
 
 .login-form-buttons .demo{
-    background-color: rgb(0, 77, 34);
+    background-color: darkmagenta;
 }
 
 .login-form-buttons .demo:hover{
-    background-color: rgb(94, 218, 135) ;
+    background-color: pink ;
 }
 
 .side-button a{

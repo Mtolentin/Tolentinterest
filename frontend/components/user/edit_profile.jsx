@@ -20,14 +20,14 @@ class EditProfileForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        const { username, first_name, last_name, bio } = this.state;
-        let user = { username, first_name, last_name, bio };
+        const { username } = this.state;
+        let user = { username };
         this.props.updateDetails(user);
         this.props.closeEditForm();
     }
 
     render(){
-        const { username, first_name, last_name, bio } = this.state;
+        const { username } = this.state;
         return (
             <div className="modal-background" onClick={this.props.closeEditForm}>
                 <div className="modal-child-round-box" onClick={e => e.stopPropagation()}>
@@ -40,21 +40,6 @@ class EditProfileForm extends React.Component{
                                         <p>Username</p>
                                         <input type="text" value={username || ""} onChange={this.update("username")} />
                                     </div>
-                                    <div>
-                                        <p>First Name</p>
-                                        <input type="text" value={first_name || ""} onChange={this.update("first_name")} />
-                                    </div>
-                                    <div>
-                                        <p>Last Name</p>
-                                        <input type="text" value={last_name || ""} onChange={this.update("last_name")} />
-                                    </div>
-                                    <div>
-                                        <p>Bio</p>
-                                        <textarea rows="3" value={bio || ""} onChange={this.update("bio")} />
-                                    </div>
-                                </div>
-                                <div className="image">
-                                    <img className="profile-pic" src="https://peridot-seed.s3-us-west-1.amazonaws.com/profile_blank.jpg"></img>
                                 </div>
                             </div>
                             <div className="bottom-options">

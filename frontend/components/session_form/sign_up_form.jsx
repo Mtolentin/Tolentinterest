@@ -1,26 +1,11 @@
 import React from 'react';
-import Credentials from './sign_up_details/credentials';
-import Names from './sign_up_details/names';
-import Gender from './sign_up_details/gender';
-import LanguageAndRegion from './sign_up_details/language_and_region';
-import Success from './sign_up_details/success';
-import { getSplashBack } from '../../util/splash_background_util';
 
 class SignUpForm extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            step: 1,
-            errors: [],
             email: '',
-            password: '',
-            age: '',
-            username: '',
-            first_name: '',
-            last_name: '',
-            gender: '',
-            language: '',
-            region: ''
+            password: ''
         }
         this.prevStep = this.prevStep.bind(this);
         this.submitForm = this.submitForm.bind(this);
@@ -28,7 +13,6 @@ class SignUpForm extends React.Component{
         
         this.addErrors = this.addErrors.bind(this);
         this.showErrors = this.showErrors.bind(this);
-        this.goForward = this.goForward.bind(this);
     }
 
     componentWillUnmount() {
@@ -40,27 +24,10 @@ class SignUpForm extends React.Component{
     }
 
     nextStep(){
-        const {step, email, password, age} = this.state;
-        if (step === 1) {
-            let newUser = {email, password, age};
-            this.props.createNewUser(newUser)
-                .then(this.props.clearErrors)
-                .then(this.goForward);
-        } else{
-            this.goForward();
-        }
-    }
-
-    goForward(){
-        const {errors, step} = this.state;
-        if (errors.length === 0 && this.props.errors.length === 0) {
-            this.setState({ step: step + 1 })
-        }
-    }
-
-    prevStep(){
-        const {step} = this.state;
-        this.setState({ step: step - 1, errors: []})
+        const { email, password} = this.state;
+        let newUser = {email, password};
+        this.props.createNewUser(newUser)
+            .then(this.props.clearErrors)
     }
 
     update(field) {
@@ -69,69 +36,66 @@ class SignUpForm extends React.Component{
         }
     }
 
+    checkFields() {
+        const { values } = this.props;
+        let newErrors = [];
+        Object.keys(values).forEach(val => {
+            if (values[val] === '') {
+                newErrors.push(`${val} can't be blank!`);
+            }
+        })
+        this.props.addErrors(newErrors);
+    }
+
     submitForm(e){
         e.preventDefault();
-        const {username, first_name, last_name, gender, language, region} = this.state;
-        let user = {username, first_name, last_name, gender, language, region};
+        const {username} = this.state;
+        let user = {username};
         this.props.updateDetails(user);
     }
 
     showErrors() {
-        let errors = (this.state.step === 1) ? this.props.errors : this.state.errors;
+        let errors = this.props.errors;
         let error = errors.length > 0 ? errors[0] : "";
         return error;
     }
 
     getFormComponent(){
-        const { step, email, password, age, username, first_name, last_name, gender, language, region } = this.state;
-        const credVals = { email, password, age };
-        const nameVals = { email, username, first_name, last_name };
-        const genVal = { gender };
-        const langAndRegVals = { language, region };
-        switch (step) {
-            case 1: //email, password, age
-                return <Credentials
-                    update={this.update}
-                    newUserDetails={this.props.newUserDetails}
-                    addErrors={this.addErrors}
-                    showErrors={this.showErrors}
-                    submitForm={this.submitForm}
-                    values={credVals} />;
-            case 2: //username, first_name, last_name
-                return <Names
-                    update={this.update}
-                    prevStep={this.prevStep}
-                    addErrors={this.addErrors}
-                    showErrors={this.showErrors}
-                    values={nameVals} />;
-            case 3: //gender
-                return <Gender
-                    update={this.update}
-                    prevStep={this.prevStep}
-                    addErrors={this.addErrors}
-                    showErrors={this.showErrors}
-                    values={genVal} />;
-            case 4: //language, region
-                return <LanguageAndRegion
-                    update={this.update}
-                    prevStep={this.prevStep}
-                    addErrors={this.addErrors}
-                    showErrors={this.showErrors}
-                    values={langAndRegVals} />;
-            case 5: //signup
-                return <Success
-                    submitForm={this.submitForm} />;
-        }
+        const {email, password} = this.state;
+        const credVals = { email, password };
+ 
     }
-
     render(){
         return (
-            <div>
-                {getSplashBack()}
-                {this.getFormComponent()}
+            <div className="modal-background">
+                <div className="modal-child" onClick={e => e.stopPropagation()}>
+                    <div className="login-form-box">
+                        <div className="login-heading">
+                            <div><i id="logo" className="fab fa-pinterest"></i></div>
+                            <h1>This is Tolentinterest</h1>
+                            <div className="prompt">What a Wonderful World</div>
+                        </div>
+                        <form className="login-form">
+                            <div className="login-fields">
+                                <input type='text' placeholder="Email" value={values.email} onChange={this.props.update("email")} />
+                                <input type='password' placeholder="Create a password" value={values.password} onChange={this.props.update("password")} />
+                            </div>
+                            <div className="error">
+                                {this.props.showErrors()}
+                            </div>
+                            <div className="login-form-buttons">
+                                <button className="login-button button" onClick={this.handleNext} >Create User</button>
+                            </div>
+                        </form>
+                        <div className="signup-link">
+                            <Link to='/login'>Already a member? Log in</Link>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
+
 }
 
 export default SignUpForm;

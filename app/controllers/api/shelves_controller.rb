@@ -16,7 +16,7 @@ class Api::ShelvesController < ApplicationController
 
     def create
         @shelf = Shelve.create(shelf_params)
-        @shelf.user_id = current_user.id
+        @shelf.author_id = current_user.id
         if @shelf.save
             render "/api/shelves/show"
         else
@@ -39,7 +39,7 @@ class Api::ShelvesController < ApplicationController
 
     def destroy
         @shelf = Shelve.find_by(id: params[:id])
-        if @shelf && @shelf.user_id == current_user.id
+        if @shelf && @shelf.author_id == current_user.id
             if @shelf.destroy
                 render json: @shelf.id
             else
