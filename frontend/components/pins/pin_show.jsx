@@ -207,8 +207,8 @@ class PinShow extends React.Component{
     }
 
     render() {
-        debugger
         const { pins, chosenPinId, fetchPins, users} = this.props;
+        debugger
         if (!Object.values(pins).length) return null;
         let showPin = pins[chosenPinId];
         let owner = users[showPin.author_id];

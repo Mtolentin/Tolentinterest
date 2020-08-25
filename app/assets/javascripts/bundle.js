@@ -2866,12 +2866,12 @@ var PinShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       var _this$props6 = this.props,
           pins = _this$props6.pins,
           chosenPinId = _this$props6.chosenPinId,
           fetchPins = _this$props6.fetchPins,
           users = _this$props6.users;
+      debugger;
       if (!Object.values(pins).length) return null;
       var showPin = pins[chosenPinId];
       var owner = users[showPin.author_id];
@@ -2957,9 +2957,10 @@ var mapStateToProps = function mapStateToProps(_ref, _ref2) {
       currentUserId = _ref.session.currentUserId,
       errors = _ref.errors;
   var params = _ref2.match.params;
+  debugger;
   return {
     pins: pins,
-    chosenPinId: parseInt(params.pinId),
+    chosenPinId: parseInt(params.tinId),
     users: users,
     errors: errors,
     currentUserId: currentUserId,

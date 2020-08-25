@@ -9,7 +9,6 @@ class Api::TinsController < ApplicationController
         @tin = Tin.find_by(id: params[:id])
         if @tin 
             render "/api/tins/show"
-            # <img src="<%= url_for(@tin.photo) %>" alt="">
         else
             render json: @tin.errors.full_messages, status: 422
         end
