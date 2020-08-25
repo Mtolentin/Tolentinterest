@@ -6,7 +6,7 @@ import { clearErrors } from '../../actions/session_actions';
 import { fetchUsers } from '../../actions/user_actions'
 
 const mapStateToProps = ({ entities: { users, pins, boards }, session: { currentUserId }, errors }, { match: { params } }) => {
-    debugger
+    // debugger
     return {
         pins,
         chosenPinId: parseInt(params.tinId),

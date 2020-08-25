@@ -7,7 +7,7 @@ import { selectSuggestedPins } from '../../reducers/selectors';
 
 class PinShow extends React.Component{
     constructor(props){
-        debugger
+        // debugger
         super(props)
         this.state={
             edit: false,
@@ -208,7 +208,7 @@ class PinShow extends React.Component{
 
     render() {
         const { pins, chosenPinId, fetchPins, users} = this.props;
-        debugger
+        // debugger
         if (!Object.values(pins).length) return null;
         let showPin = pins[chosenPinId];
         let owner = users[showPin.author_id];

@@ -34,3 +34,5 @@ const NavBar = ({ currentUserId, logout }) => {
 }
 
 export default NavBar;
+
+// https://app-stelle.s3-us-west-1.amazonaws.com/assets/Titular.jpg

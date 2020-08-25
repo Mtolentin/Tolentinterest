@@ -9,7 +9,7 @@ class PinIndexItem extends React.Component{
     }
 
     showPinDetails(){
-        debugger
+        // debugger
         const pinId = this.props.pin.id;
         this.props.history.push(`/tins/${pinId}`);
         window.scrollTo(0, 0);
