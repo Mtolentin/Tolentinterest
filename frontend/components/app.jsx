@@ -14,32 +14,24 @@ import BoardShowContainer from './boards/board_show_container';
 
 const App = () => (
     <div>
+
         <header>
             <ProtectedRoute path="/" component={NavBarContainer} />
         </header>
 
         <ProtectedRoute path="/users/:userId" component={UserProfileContainer} />
-
+        
         <Switch>
-
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
             <AuthRoute exact path="/" component={WelcomeContainer} />
-
             <ProtectedRoute path="/tins/:tinId" component={PinShowContainer} />
             <ProtectedRoute path="/users/:userId/pins" component={PinIndexContainer} />
-
             <ProtectedRoute path="/users/:userId/shelve/:shelveId" component={BoardShowContainer} />
             <ProtectedRoute path="/users/:userId/shelves" component={BoardIndexContainer} />
-            
-
             <ProtectedRoute path="/pin-builder" component={PinCreateContainer} />
-            
-
             <ProtectedRoute path="/home" component={PinIndexContainer} />
-
         </Switch>
-
         
     </div>
 );
