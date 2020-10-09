@@ -45,7 +45,7 @@
 
 .pin-top-buttons > button .select-board{
     width: 150px;
-    color: rgb(0, 87, 6);
+    color: darkmagenta;
     padding: 15px;
 }
 
@@ -312,14 +312,14 @@
 .save-pin:focus,
 .drop-down:focus{
     outline-style: none;
-    border: 3px solid rgb(0, 223, 0);
+    border: 3px solid pink
     margin: 9px;
     border-radius: 10px;
 }
 
 .board-selection select:focus{
     outline-style: none;
-    border: 3px solid rgb(0, 233, 0);
+    border: 3px solid pink
     margin: 7px;
 }
 
@@ -358,7 +358,7 @@
 
 .bottom-options button:active{
     outline-style: none;
-    border: 3px solid rgb(0, 233, 0);
+    border: 3px solid pink
     margin: 7px;
 }
 
@@ -374,7 +374,7 @@
 
 .save-or-cancel > .save-edit:hover, 
 .continue:hover{
-    background-color: rgb(28, 143, 36);
+    background-color: darkmagenta;
 }
 
 .pin-create-inputs{
@@ -434,12 +434,12 @@
 
 .pin-top-buttons >.no-button,
 .save-or-cancel > .no-button{
-    background-color: rgb(147, 231, 147);
+    background-color: magenta;
 }
 
 .no-button:hover,
 .save-or-cancel > .no-button:hover{
-    background-color: rgb(147, 231, 147);
+    background-color: magenta;
     cursor: initial;
 }
 

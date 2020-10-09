@@ -29,9 +29,10 @@ class Welcome extends React.Component{
                 <div className="modal-background">
                     <div className="modal-child" onClick={e => e.stopPropagation()}>
                         <div className="login-signup">
-                            <div><i id="logo" className="fab fa-pinterest"></i></div>
+                            <img id="titular"
+                                src="https://app-stelle.s3-us-west-1.amazonaws.com/Titular.jpg"
+                            />
                             <h2>This is Tolentinterest</h2>
-                            <div>What a Wonderful World</div>
                             <div className="buttons">
                                 <Link to='/login'>
                                     <button className="login-button button">Log in</button>
