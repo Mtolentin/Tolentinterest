@@ -27,7 +27,8 @@ class PinShow extends React.Component{
 
     goBack(e){
         e.stopPropagation();
-        this.props.history.goBack();
+        // this.props.history.goBack();
+        this.props.history.push(`/$`);
     }
 
     componentDidMount(){

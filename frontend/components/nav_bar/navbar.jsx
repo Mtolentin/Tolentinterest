@@ -11,7 +11,7 @@ const NavBar = ({ currentUserId, logout }) => {
         <div>
             <nav className="header-logout">
                 <NavLink to="/home" className="icon">
-                    <img src="../../../app/assets/images/favicon_io/apple-icon-57x57.png"/>
+                    <img src="https://app-stelle.s3-us-west-1.amazonaws.com/assets/Titular.jpg"/>
                 </NavLink>
                 <div className="home-button">
                     <Link to="/home">Home</Link>

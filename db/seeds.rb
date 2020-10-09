@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 bucket = "https://app-stelle.s3-us-west-1.amazonaws.com/"
 
 User.destroy_all
