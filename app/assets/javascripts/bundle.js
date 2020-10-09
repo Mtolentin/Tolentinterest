@@ -1349,7 +1349,7 @@ var NavBar = function NavBar(_ref) {
     to: "/home",
     className: "icon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "../../../app/assets/images/favicon_io/apple-icon-57x57.png"
+    src: "https://app-stelle.s3-us-west-1.amazonaws.com/assets/Titular.jpg"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -2629,8 +2629,9 @@ var PinShow = /*#__PURE__*/function (_React$Component) {
   _createClass(PinShow, [{
     key: "goBack",
     value: function goBack(e) {
-      e.stopPropagation();
-      this.props.history.goBack();
+      e.stopPropagation(); // this.props.history.goBack();
+
+      this.props.history.push("/$");
     }
   }, {
     key: "componentDidMount",
