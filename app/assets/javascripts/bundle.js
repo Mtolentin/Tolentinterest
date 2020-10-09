@@ -1349,7 +1349,8 @@ var NavBar = function NavBar(_ref) {
     to: "/home",
     className: "icon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "https://app-stelle.s3-us-west-1.amazonaws.com/assets/Titular.jpg"
+    id: "titular",
+    src: "https://app-stelle.s3-us-west-1.amazonaws.com/Titular.jpg"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -1382,7 +1383,7 @@ var NavBar = function NavBar(_ref) {
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (NavBar); // https://app-stelle.s3-us-west-1.amazonaws.com/assets/Titular.jpg
+/* harmony default export */ __webpack_exports__["default"] = (NavBar);
 
 /***/ }),
 

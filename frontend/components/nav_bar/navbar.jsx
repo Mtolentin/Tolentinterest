@@ -11,7 +11,9 @@ const NavBar = ({ currentUserId, logout }) => {
         <div>
             <nav className="header-logout">
                 <NavLink to="/home" className="icon">
-                    <img src="https://app-stelle.s3-us-west-1.amazonaws.com/assets/Titular.jpg"/>
+                    <img id="titular"
+                        src="https://app-stelle.s3-us-west-1.amazonaws.com/Titular.jpg"
+                    />
                 </NavLink>
                 <div className="home-button">
                     <Link to="/home">Home</Link>
@@ -34,5 +36,3 @@ const NavBar = ({ currentUserId, logout }) => {
 }
 
 export default NavBar;
-
-// https://app-stelle.s3-us-west-1.amazonaws.com/assets/Titular.jpg
