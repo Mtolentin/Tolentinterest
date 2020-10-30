@@ -11,26 +11,40 @@ import PinCreateContainer from './pins/pin_create_form_container';
 import BoardIndexContainer from './boards/board_index_container';
 import UserProfileContainer from './user/user_profile_container';
 import BoardShowContainer from './boards/board_show_container';
+// import BienBarContainer from './nav_bar/bienbar_container';
+import BienvenContainer from './bienvenidos/bienven_container';
 
 const App = () => (
     <div>
 
         <header>
+            {/* <AuthRoute exact path="/" component={BienBarContainer} />    */}
             <ProtectedRoute path="/" component={NavBarContainer} />
         </header>
 
-        <ProtectedRoute path="/users/:userId" component={UserProfileContainer} />
+        <ProtectedRoute path="/users/:userId" 
+            component={UserProfileContainer} />
         
         <Switch>
-            <AuthRoute path="/login" component={LoginFormContainer} />
-            <AuthRoute path="/signup" component={SignupFormContainer} />
-            <AuthRoute exact path="/" component={WelcomeContainer} />
-            <ProtectedRoute path="/tins/:tinId" component={PinShowContainer} />
-            <ProtectedRoute path="/users/:userId/pins" component={PinIndexContainer} />
-            <ProtectedRoute path="/users/:userId/shelve/:shelveId" component={BoardShowContainer} />
-            <ProtectedRoute path="/users/:userId/shelves" component={BoardIndexContainer} />
-            <ProtectedRoute path="/pin-builder" component={PinCreateContainer} />
-            <ProtectedRoute path="/home" component={PinIndexContainer} />
+            {/* <AuthRoute path="/login" component={LoginFormContainer} /> */}
+            {/* <AuthRoute path="/signup" component={SignupFormContainer} /> */}
+            {/* <AuthRoute exact path="/" component={WelcomeContainer} />  */}
+
+            <AuthRoute exact path="/" component={BienvenContainer} /> 
+
+            <ProtectedRoute path="/tins/:tinId" 
+                component={PinShowContainer} />
+            <ProtectedRoute path="/users/:userId/pins" 
+                component={PinIndexContainer} />
+            <ProtectedRoute path="/users/:userId/shelve/:shelveId" 
+                component={BoardShowContainer} />
+            <ProtectedRoute path="/users/:userId/shelves" 
+                component={BoardIndexContainer} />
+            <ProtectedRoute path="/pin-builder" 
+                component={PinCreateContainer} />
+            <ProtectedRoute path="/home" 
+                component={PinIndexContainer} />
+
         </Switch>
         
     </div>

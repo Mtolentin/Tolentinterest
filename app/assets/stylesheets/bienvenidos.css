@@ -1,0 +1,227 @@
+#BienTiles { display: grid;
+    grid-template-rows:  54px 20vh 20vh 10vh 20vh 1fr;
+    grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+#BienBar{ grid-row: 1 / 2; grid-column: 1 / 8; display: grid;
+    grid-template-columns: 300px 1fr; background-color: white;
+    padding: 0px; top: 0px; left: 0px;
+}
+#BienBar #BBar_1 { 
+    grid-column: 1 / 2; display: flex; 
+    align-items: center; justify-self: flex-start; 
+}
+#BienBar #BBar_1 > * { margin-left: 10px; margin-right: 5px;}
+#BBar_1 img {
+    height: 54px !important;  width: 54px !important; padding: 0px !important;
+}
+#BBar_1 span {
+    color: palevioletred; font-size: 12pt;        
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+#BienBar #BBar_4 { 
+    grid-column: 2 / 3; display: flex; flex-direction: row; 
+    align-items: center; justify-content: flex-end;
+}
+#BBar_4 button{
+    height: auto;
+    background-color: lightpink;
+    border: none;
+    color: white;
+    margin-right: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 19px;
+    cursor: pointer;
+}
+#BBar_4 button.BienLogin{ background-color: lightpink; }
+#BBar_4 button.BienSignUp{ background-color: lightsalmon; }
+#BBar_4 a button.BienDemo{ background-color: purple; }
+#BienTiles img{ width: 95%; padding: 5px; border-radius: 20px;
+    position: relative;
+}
+#BienCaps{ grid-row: 3 / 4; grid-column: 3 / 6; display: flex;
+    flex-direction: column; align-items: center; justify-content: center;
+}
+#GetYourNext{ font-family: "Arial Black", Gadget, sans-serif; font-size: 40px;}
+#Flavors{ font-family: "Arial Black", Gadget, sans-serif; font-size: 40px;}
+#Flavors.noGo{ display: none; }
+#Flavors.aniUp{ animation: flavUp .6s ease-out 0s 1 forwards; }
+#Flavors.aniDown{ animation: flavDown .6s ease-out 0s 1 forwards; }
+@keyframes flavUp{ 
+    0%   { transform: translate(0, 35px); opacity: 0; }
+    100% { opacity: 1;} 
+}
+@keyframes flavDown{ 
+    0%   { opacity: 1;} 
+    100%   { transform: translate(0, -35px); opacity: 0; }
+}
+#Periods{ display: inline; }
+#Periods span { font-size: 80px; color: lightgray; }
+#Period_ek.active{ color: orange; }
+#Period_do.active{ color: purple; }
+#Period_tin.active{ color: green; }
+#Period_char.active{ color: blue; }
+#Period_panch.active{ color: red; }
+#BienColumn1{ grid-row: 3 / 6; grid-column: 1 / 2; display: block;}
+#BienColumn2{ grid-row: 4 / 6; grid-column: 2 / 3; display: block;}
+#BienColumn3{ grid-row: 5 / 6; grid-column: 3 / 4; display: block;}
+#BienColumn4{ grid-row: 6 / 6; grid-column: 4 / 5; display: block;}
+#BienColumn5{ grid-row: 5 / 6; grid-column: 5 / 6; display: block;}
+#BienColumn6{ grid-row: 4 / 6; grid-column: 6 / 7; display: block;}
+#BienColumn7{ grid-row: 3 / 6; grid-column: 7 / 8; display: block;}
+#BienTiles .noGo{ display: none; }
+#BienTiles img.aniUp { animation: bienUp .6s ease-out 0s 1 forwards; }
+@keyframes bienUp{ 0% { top: 75px; opacity: 0; } 100% { top: 0px; opacity: 1; }}
+#BienTiles img.aniDown { animation: bienDown .6s ease-out 0s 1 forwards; }
+@keyframes bienDown{ 0% { top: 0px; opacity: 1; }100% { top: 75px; opacity: 0;}}
+
+.dimmer{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    background-color: gray;
+    opacity: 0.5;
+}
+
+.Yodal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.YodalBox{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 410px;
+    height: 500px;
+    font-size: 20px;
+    padding-top: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    color: rgb(48, 48, 48);
+    z-index: 3;
+    border-radius: 30px;
+    position: fixed;
+    top: -25vh;
+    left: 10vw;
+}
+
+
+#Portal > * {
+    opacity: 1 !important;
+    position: fixed;
+    z-index: 2;
+}
+
+.login-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-header > * {
+    font-family: "Arial Black", Gadget, sans-serif; color: palevioletred; 
+}
+.login-header h1 { font-size: 35px; margin-top: 10px; margin-bottom: 0;}
+.login-header div{ font-size: 12pt; }
+
+
+.login-form{ height:70%; }
+
+.login-fields{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-fields > input{
+    border: 2px solid lightgray;
+    border-radius: 15px;
+    width: 250px;
+    height: 45px;
+    padding: 10px;
+    margin-top: 7px;
+    box-sizing: border-box;
+
+}
+.login-fields > input:focus{
+    outline-style: none;
+    border: 3px solid pink;
+}
+
+.login-form-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 30%;
+}
+
+.login-form-buttons button{ width: 250px; height: 35px; padding: 5px; }
+
+.login-form-buttons div{ margin-top: 10px; font-weight: bold; font-size: 15px; }
+
+.signup-link{ padding: 25px; }
+
+.signup-link > button{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    width: 250px; 
+    height: 35px; 
+    padding: 5px;
+}
+
+.login-form-buttons .demo{
+    background-color: darkmagenta;
+}
+
+.login-form-buttons .demo:hover{
+    background-color: pink ;
+}
+
+.button{
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+    margin-top: 10px;
+    width: 100%;
+    font-family: inherit;
+    border-radius: 30px;
+    border: inherit;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.button:focus{ outline: none; }
+
+.login-button{ background-color: magenta; color: white; }
+
+.demo-login-button{ background-color: darkmagenta; color: white; }
+
+.demo-login-button:hover{ background-color: darkmagenta; }
+
+.buttons .signup-button{background-color: rgb(230, 230, 230); color: black;}
+
+.login-button:hover{ background-color: darkmagenta; }
+
+.buttons .signup-button:hover{ background-color: rgb(212, 212, 212); }
+
+.button.ToRegister{ background-color: lightsalmon; }
+.button.ToLogin{ background-color: lightpink; }

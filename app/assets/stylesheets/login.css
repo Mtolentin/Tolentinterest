@@ -1,88 +1,9 @@
-.login-form-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 484px;
-    height: 566px;
-    font-size: 20px;
-    padding-top: 25px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-sizing: border-box;
-    color: rgb(48, 48, 48);
-}
-
-.login-heading div #logo{
-    font-size: 45px;
-}
-
-.login-heading h1{
-    font-size: 35px;
-    margin-top: 10px;
-    margin-bottom: 0;
-}
-
 .login-heading{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 30px;
-}
-
-.login-fields{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-fields > input{
-    border: 2px solid lightgray;
-    border-radius: 15px;
-    width: 250px;
-    height: 45px;
-    padding: 10px;
-    margin-top: 7px;
-    box-sizing: border-box;
-}
-
-.login-fields > input:focus{
-    outline-style: none;
-    border: 3px solid pink;
-}
-
-.login-form{
-    height:70%;
-}
-
-.login-form-buttons{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    height: 30%;
-}
-
-.login-form-buttons button{
-    width: 250px;
-    height: 35px;
-    padding: 5px;
-}
-
-.login-form-buttons div{
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.login-form-buttons .demo{
-    background-color: darkmagenta;
-}
-
-.login-form-buttons .demo:hover{
-    background-color: pink ;
 }
 
 .side-button a{
@@ -125,15 +46,4 @@
     height: 20px;
     font-size: 14px;
     padding: 10px;
-}
-
-.signup-link{
-    padding: 25px;
-}
-
-.signup-link > a{
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
-    font-weight: bold;
 }

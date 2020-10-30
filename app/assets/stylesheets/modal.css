@@ -8,19 +8,6 @@
     z-index: 100;
 }
 
-.modal-child{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .modal-child-round-box{
     display: flex;
     flex-direction: column;

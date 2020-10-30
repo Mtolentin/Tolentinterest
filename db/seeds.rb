@@ -16,25 +16,25 @@ Shelve.destroy_all
 TinShelve.destroy_all
 
 
-u1 = User.create!( username: "Guest", password: "hunter12",
+u1 = User.create!( username: "Guest", password: "stellebelle1",
                       email: "m477@null.net"                )
 
-u2 = User.create!( username: "Demogu2", password: "hunter13",
+u2 = User.create!( username: "Demogu2", password: "stellebelle2",
                       email: "m478@null.net"                )
 
-u3 = User.create!( username: "Demogu3", password: "hunter14",
+u3 = User.create!( username: "Demogu3", password: "stellebelle3",
                       email: "m479@null.net"                )
 
-u4 = User.create!( username: "Demogu4", password: "hunter15",
+u4 = User.create!( username: "Demogu4", password: "stellebelle4",
                       email: "m480@null.net"                )
 
-u5 = User.create!( username: "Demogu5", password: "hunter16",
+u5 = User.create!( username: "Demogu5", password: "stellebelle5",
                       email: "m481@null.net"                )
 
-u6 = User.create!( username: "Demogu6", password: "hunter17",
+u6 = User.create!( username: "Demogu6", password: "stellebelle6",
                       email: "m482@null.net"                )
 
-u7 = User.create!( username: "Matthew", password: "hunter18",
+u7 = User.create!( username: "Matthew", password: "stellebelle7",
                       email: "m483@null.net"                )
 
 s1 = Shelve.create!( author_id: u1.id, name: "Locations",
@@ -46,7 +46,7 @@ s2 = Shelve.create!( author_id: u3.id, name: "Books",
 s3 = Shelve.create!( author_id: u4.id, name: "Good Food",
                      about: "I wish I could eat these all over again!"        )
 
-s4 = Shelve.create!( author_id: u5.id, name: "The Most Important Peole",
+s4 = Shelve.create!( author_id: u5.id, name: "The Most Important People",
                      about: "This is my cast of characters."  )
 
 s5 = Shelve.create!(  author_id: u6.id, name: "Young Stella",
@@ -102,5 +102,6 @@ s5 = Shelve.create!(  author_id: u6.id, name: "Young Stella",
                             filename: "five#{num}.jpeg" 
                         })
     TinShelve.create!(shelve_id: s5.id, tin_id: tin.id)
-
 end
+
+puts "yeah baby"

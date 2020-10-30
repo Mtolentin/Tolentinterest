@@ -7,7 +7,6 @@ import { selectSuggestedPins } from '../../reducers/selectors';
 
 class PinShow extends React.Component{
     constructor(props){
-        // debugger
         super(props)
         this.state={
             edit: false,
@@ -27,8 +26,7 @@ class PinShow extends React.Component{
 
     goBack(e){
         e.stopPropagation();
-        // this.props.history.goBack();
-        this.props.history.push(`/$`);
+        this.props.history.push(`/`);
     }
 
     componentDidMount(){
@@ -59,7 +57,11 @@ class PinShow extends React.Component{
 
     renderEditForm(){
         if (this.state.edit){
-            const {pins, boards, chosenPinId, createBoard, errors, clearErrors, currentUserId, updatePin, deletePin, saveToBoard} = this.props;
+            const {
+                pins, boards, chosenPinId, createBoard, errors, clearErrors, 
+                currentUserId, updatePin, deletePin, saveToBoard
+            } = this.props;
+            
             return (
                 <EditPinForm 
                     pin={pins[chosenPinId]}
@@ -87,7 +89,8 @@ class PinShow extends React.Component{
                     Select board
                 </div>
                 <div id="board-names" className="menu-box"> 
-                    <ul className="drop-down-menu" onClick={e => e.stopPropagation()}>
+                    <ul className="drop-down-menu" 
+                        onClick={e => e.stopPropagation()}>
                         {boards.map((board, idx) => {
                             return (
                                 <li key={idx}
@@ -114,7 +117,8 @@ class PinShow extends React.Component{
     }
 
     makeBoardSelection(e) {
-        document.getElementById("selected-text").innerHTML = e.currentTarget.innerHTML;
+        document.getElementById("selected-text")
+            .innerHTML = e.currentTarget.innerHTML;
         this.toggleMenu(e);
         this.update("chosenBoardId")(e);
     }
@@ -155,7 +159,9 @@ class PinShow extends React.Component{
             pin_id: parseInt(this.props.chosenPinId)
         }
         this.props.saveToBoard(boardPin);
-        this.setState({confirm: true, chosenBoardId: ""}, this.toggleButtonLock());
+        this.setState(
+            {confirm: true, chosenBoardId: ""}, this.toggleButtonLock()
+        );
     }
     //board end
 
@@ -166,7 +172,8 @@ class PinShow extends React.Component{
     displayConfirmation() {
         if (this.state.confirm) {
             return (
-                <div className="modal-child-round-box saved" onClick={this.closeConfirm}>
+                <div className="modal-child-round-box saved" 
+                    onClick={this.closeConfirm}>
                     <div className="pin-confirmation-box">
                         <h1>{`Saved!`}</h1>
                         <i className="far fa-times-circle"></i>
@@ -207,45 +214,62 @@ class PinShow extends React.Component{
         }
     }
 
+
     render() {
+        
         const { pins, chosenPinId, fetchPins, users} = this.props;
-        // debugger
+        
         if (!Object.values(pins).length) return null;
         let showPin = pins[chosenPinId];
         let owner = users[showPin.author_id];
         if (!owner) return null;
         this.toggleButtonLock();
+        
         return (
+
             <div className="pin-show-page">
                 {this.renderEditForm()}
                 {this.showBoardForm()}
                 {this.displayConfirmation()}
+                
                 <div className="back-button" onClick={this.goBack}>
                     <i className="fas fa-arrow-left"></i>
                 </div>
+
                 <div className="pin-show-box">
                     <div className="pin-image-show partition">
                         <img className="thumbnail" src={showPin.photoUrl} />
                     </div>
+
                     <div className="pin-content">
                         <div className="pin-options">
                             <div className="pin-buttons">
                                 {this.optionToEdit()}
                             </div>
                             <div className="pin-top-buttons">
-                                <button id="save-pin" className="save-pin" onClick={this.handleSaveToBoard}>Save</button>
+                                <button id="save-pin" 
+                                    className="save-pin" 
+                                    onClick={this.handleSaveToBoard}>Save
+                                </button>
                                 {this.boardNames()}
                             </div>
                         </div>
-                        <a href={showPin.link} target="_blank">{showPin.link}</a>
+                        
+                        <a href={showPin.link} target="_blank">
+                            {showPin.link}
+                        </a>
+
                         <h1>{showPin.title}</h1>
-                        <NavLink className="pin-owner" to={`/users/${owner.id}/pins`}>
+                        <NavLink className="pin-owner" 
+                            to={`/users/${owner.id}/pins`}>
                             <i className="fas fa-user-circle"></i>
                             <p>{`${owner.firstName} ${owner.lastName}`}</p>
                         </NavLink>
                         <p>{showPin.description}</p>
                     </div>
+
                 </div>
+
                 <div className="related-pins">
                     <h1>More like this</h1>
                     <PinIndex pins={this.getSuggested()} getInfo={fetchPins}/>

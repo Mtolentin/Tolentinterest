@@ -20,7 +20,8 @@ export const selectSuggestedPins = (pins, userId, pinId) => {
     Object.values(pins).forEach( pin => {
         if (pin.id === pinId) return;
         if (pin.category === pins[pinId].category) suggestedPins.push(pin);
-        // if ((pin.userId !== userId) && (pin.category === pins[pinId].category)) suggestedPins.push(pin);
+        // if ((pin.userId !== userId) && 
+        // (pin.category === pins[pinId].category)) suggestedPins.push(pin);
     })
     return suggestedPins;
 };

@@ -9,7 +9,6 @@ class PinIndexItem extends React.Component{
     }
 
     showPinDetails(){
-        // debugger
         const pinId = this.props.pin.id;
         this.props.history.push(`/tins/${pinId}`);
         window.scrollTo(0, 0);
@@ -28,7 +27,9 @@ class PinIndexItem extends React.Component{
             <div className="pin-box" onClick={this.showPinDetails}>
                 <div className="pin-box-details">
                     <div className="pin-image">
-                        <img className="thumbnail" src={pin.photoUrl} id={pin.id} onLoad={this.showImage(lastPin)} />
+                        <img className="thumbnail" src={pin.photoUrl} id={pin.id} 
+                        // onLoad={this.showImage(lastPin)} 
+                    />
                     </div>
                 </div>
                 <div className="pin-space"></div>
