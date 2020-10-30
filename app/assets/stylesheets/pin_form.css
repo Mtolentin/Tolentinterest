@@ -358,7 +358,7 @@
 
 .bottom-options button:active{
     outline-style: none;
-    border: 3px solid pink
+    border: 3px solid pink;
     margin: 7px;
 }
 
