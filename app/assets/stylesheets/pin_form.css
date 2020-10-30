@@ -312,14 +312,14 @@
 .save-pin:focus,
 .drop-down:focus{
     outline-style: none;
-    border: 3px solid pink
+    border: 3px solid pink;
     margin: 9px;
     border-radius: 10px;
 }
 
 .board-selection select:focus{
     outline-style: none;
-    border: 3px solid pink
+    border: 3px solid pink;
     margin: 7px;
 }
 
